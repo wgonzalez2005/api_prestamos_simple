@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100425
+ Source Server Version : 100427
  Source Host           : localhost:3306
  Source Schema         : db_prestamos_simple
 
  Target Server Type    : MySQL
- Target Server Version : 100425
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 07/08/2023 16:17:26
+ Date: 07/08/2023 22:45:36
 */
 
 SET NAMES utf8mb4;
@@ -1111,6 +1111,8 @@ CREATE TABLE `prestamos`  (
   INDEX ```cempresa```(`empresa_id`) USING BTREE,
   INDEX ```codcob```(`cobrador_id`) USING BTREE,
   INDEX ```codrut```(`ruta_id`) USING BTREE,
+  INDEX `fk_prestamos_prestamos_4`(`plazo_id`) USING BTREE,
+  INDEX `fk_prestamos_prestamos_5`(`tipoprestamos_id`) USING BTREE,
   CONSTRAINT `fk_prestamos_prestamos_1` FOREIGN KEY (`clientes_id`) REFERENCES `clientes` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_2` FOREIGN KEY (`empresa_id`) REFERENCES `empresa` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_3` FOREIGN KEY (`ruta_id`) REFERENCES `rutas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -1283,7 +1285,7 @@ CREATE TABLE `usuario`  (
 -- Records of usuario
 -- ----------------------------
 INSERT INTO `usuario` VALUES (1, 1, 'WILSON GONZALEZ', 'wilson', '$2b$10$n.wWj5ISG75iqMTbmRchCutz2CO0yTF2IuAJIvMZlU6LIsrCosxpO', 1, 1);
-INSERT INTO `usuario` VALUES (2, 1, 'REYNALDO DE JESUS', 'rey', '$2b$10$lAfnEYPQC4ua3F60LuyfIOxD9PtOzkShFoyP.7v1O7tG0qFj27dRe', 3, 1);
+INSERT INTO `usuario` VALUES (2, 1, 'REYNALDO DE JESUS', 'rey', '$2b$10$lAfnEYPQC4ua3F60LuyfIOxD9PtOzkShFoyP.7v1O7tG0qFj27dRe', 2, 1);
 
 -- ----------------------------
 -- Procedure structure for ActualizarCuotas
