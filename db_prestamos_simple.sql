@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 08/08/2023 16:04:15
+ Date: 10/08/2023 15:53:18
 */
 
 SET NAMES utf8mb4;
@@ -626,6 +626,21 @@ INSERT INTO `cuotas` VALUES (26, 1, '7/5/2025', 21, 705.56, 43.30, 0.00, 705.56,
 INSERT INTO `cuotas` VALUES (26, 1, '7/6/2025', 22, 716.15, 32.71, 0.00, 716.15, 32.71, 0.00);
 INSERT INTO `cuotas` VALUES (26, 1, '7/7/2025', 23, 726.89, 21.97, 0.00, 726.89, 21.97, 0.00);
 INSERT INTO `cuotas` VALUES (26, 1, '7/8/2025', 24, 737.79, 11.07, 0.00, 737.79, 11.07, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/9/2023', 1, 2961.57, 833.33, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/10/2023', 2, 3010.93, 783.97, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/11/2023', 3, 3061.11, 733.79, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/12/2023', 4, 3112.13, 682.77, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/1/2024', 5, 3164.00, 630.90, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/2/2024', 6, 3216.73, 578.17, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/3/2024', 7, 3270.34, 524.56, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/4/2024', 8, 3324.85, 470.05, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/5/2024', 9, 3380.26, 414.64, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/6/2024', 10, 3436.60, 358.30, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/7/2024', 11, 3493.87, 301.03, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/8/2024', 12, 3552.11, 242.79, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/9/2024', 13, 3611.31, 183.59, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/10/2024', 14, 3671.50, 123.40, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '8/11/2024', 15, 3732.69, 62.21, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for detalle_pagos
@@ -1222,7 +1237,7 @@ CREATE TABLE `prestamos`  (
   CONSTRAINT `fk_prestamos_prestamos_3` FOREIGN KEY (`ruta_id`) REFERENCES `rutas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_4` FOREIGN KEY (`plazo_id`) REFERENCES `plazos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_5` FOREIGN KEY (`tipoprestamos_id`) REFERENCES `tipoprestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of prestamos
@@ -1253,6 +1268,7 @@ INSERT INTO `prestamos` VALUES (23, '7/3/2023', 6, 1, 1, 30.00, 15000.00, 3810.9
 INSERT INTO `prestamos` VALUES (24, '7/3/2023', 1, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '7/9/2023', '6/8/2025', 0.00, 2900.00, 0.00, '', 5, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (25, '8/9/2023', 6, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '8/9/2023', '7/8/2025', 0.00, 2900.00, 0.00, '', 5, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (26, '8/12/2023', 7, 1, 1, 18.00, 15000.00, 2972.68, 748.86, '8/9/2023', '7/8/2025', 0.00, 0.00, 0.00, '08/08/2023', 5, 24, 15000.00, 2972.68, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.50, 3794.90, '9/9/2023', '8/11/2024', 0.00, 2900.00, 0.00, '', 5, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
 
 -- ----------------------------
 -- Table structure for referencias
