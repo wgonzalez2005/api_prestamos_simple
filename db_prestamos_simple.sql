@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 10/08/2023 15:53:18
+ Date: 30/08/2023 16:08:50
 */
 
 SET NAMES utf8mb4;
@@ -641,6 +641,24 @@ INSERT INTO `cuotas` VALUES (27, 1, '8/8/2024', 12, 3552.11, 242.79, 0.00, 0.00,
 INSERT INTO `cuotas` VALUES (27, 1, '8/9/2024', 13, 3611.31, 183.59, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '8/10/2024', 14, 3671.50, 123.40, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '8/11/2024', 15, 3732.69, 62.21, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/9/2023', 1, 2233.50, 1250.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/10/2023', 2, 2289.34, 1194.16, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/11/2023', 3, 2346.57, 1136.93, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/12/2023', 4, 2405.24, 1078.26, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/1/2024', 5, 2465.37, 1018.13, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/2/2024', 6, 2527.00, 956.50, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/3/2024', 7, 2590.18, 893.32, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/4/2024', 8, 2654.93, 828.57, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/5/2024', 9, 2721.30, 762.20, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/6/2024', 10, 2789.34, 694.16, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/7/2024', 11, 2859.07, 624.43, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/8/2024', 12, 2930.55, 552.95, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/9/2024', 13, 3003.81, 479.69, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/10/2024', 14, 3078.90, 404.60, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/11/2024', 15, 3155.88, 327.62, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/12/2024', 16, 3234.77, 248.73, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/1/2025', 17, 3315.64, 167.86, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '27/2/2025', 18, 3398.53, 84.97, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for detalle_pagos
@@ -1083,7 +1101,7 @@ CREATE TABLE `empresa`  (
 -- ----------------------------
 -- Records of empresa
 -- ----------------------------
-INSERT INTO `empresa` VALUES (1, 'Prestamos y Mas', 'Simpre presente', '011222111', 'Los alamos', '829-255-1444', 'Verifique el Prestamos', 'Verifique el recibo', 1, 1, 'prestamos@gmail.com', 1);
+INSERT INTO `empresa` VALUES (1, 'PRESTAMOS FACIL', 'Simpre presente', '011222111', 'LOS ALAMOS, SANTIAGO', '829-250-0000', 'Verifique el Prestamos', 'Verifique el recibo', 1, 1, 'prestamos@gmail.com', 1);
 
 -- ----------------------------
 -- Table structure for moras
@@ -1237,7 +1255,7 @@ CREATE TABLE `prestamos`  (
   CONSTRAINT `fk_prestamos_prestamos_3` FOREIGN KEY (`ruta_id`) REFERENCES `rutas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_4` FOREIGN KEY (`plazo_id`) REFERENCES `plazos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_5` FOREIGN KEY (`tipoprestamos_id`) REFERENCES `tipoprestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of prestamos
@@ -1269,6 +1287,7 @@ INSERT INTO `prestamos` VALUES (24, '7/3/2023', 1, 1, 1, 18.00, 50000.00, 9908.9
 INSERT INTO `prestamos` VALUES (25, '8/9/2023', 6, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '8/9/2023', '7/8/2025', 0.00, 2900.00, 0.00, '', 5, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (26, '8/12/2023', 7, 1, 1, 18.00, 15000.00, 2972.68, 748.86, '8/9/2023', '7/8/2025', 0.00, 0.00, 0.00, '08/08/2023', 5, 24, 15000.00, 2972.68, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.50, 3794.90, '9/9/2023', '8/11/2024', 0.00, 2900.00, 0.00, '', 5, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
+INSERT INTO `prestamos` VALUES (28, '28/3/2023', 7, 1, 1, 30.00, 50000.00, 12703.08, 3483.50, '28/9/2023', '27/2/2025', 0.00, 2900.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 
 -- ----------------------------
 -- Table structure for referencias
@@ -1516,18 +1535,18 @@ CREATE PROCEDURE `BuscarClientes`(IN `empresaId` int(10),IN bus VARCHAR(200))
 BEGIN
 	
 SELECT
-	id,
-	empresa_id,
-	cedula,
-	nombre,
-	direccion,
-	negocio,
-	ubicacion,
-	telefon1,
-	telefon2,
-	estadocivil,
-	sexo,
-	email,
+	a.id,
+	a.empresa_id,
+	a.cedula,
+	a.nombre,
+	a.direccion,
+	a.negocio,
+	a.ubicacion,
+	a.telefon1,
+	a.telefon2,
+	a.estadocivil,
+	a.sexo,
+	a.email,
 	IF
 	(
 		(
@@ -1538,7 +1557,7 @@ SELECT
 		FROM
 			prestamos 
 		WHERE
-			clientes_id = id 
+			clientes_id = a.id 
 			AND empresa_id = empresaId 
 		) > 0,
 		(
@@ -1549,17 +1568,17 @@ SELECT
 		FROM
 			prestamos 
 		WHERE
-			clientes_id = id 
+			clientes_id = a.id 
 			AND empresa_id = empresaId 
 		),
 		0 
 	) AS balance,
-	estado
+	a.estado
 FROM
-	clientes 
+	clientes a
 WHERE
-	empresa_id = empresaId 
-	AND CONCAT_WS( "", nombre, direccion, negocio, ubicacion, telefon1, telefon2, estadocivil ) LIKE bus;
+	a.empresa_id = empresaId 
+	AND CONCAT_WS( "", a.nombre, a.direccion, a.negocio,a.ubicacion, a.telefon1, a.telefon2, a.estadocivil ) LIKE bus;
 END
 ;;
 delimiter ;
@@ -2234,22 +2253,107 @@ CREATE PROCEDURE `getClientesAll`(IN `empresaId` int(10))
 BEGIN
 	
 SELECT
-	id,
-	empresa_id,
-	cedula,
-	nombre,
-	direccion,
-	negocio,
-	ubicacion,
-	telefon1,
-	telefon2,
-	estadocivil,
-	sexo,
-	email,
+	a.id,
+	a.empresa_id,
+	a.cedula,
+	a.nombre,
+	a.direccion,
+	a.negocio,
+	a.ubicacion,
+	a.telefon1,
+	a.telefon2,
+	a.estadocivil,
+	a.sexo,
+	a.email,
+	IF
+	(
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id = a.id 
+			AND empresa_id = empresaId 
+		) > 0,
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id = a.id 
+			AND empresa_id = empresaId 
+		),
+		0 
+	) AS balance,
 	estado
 FROM
-	clientes 
-	WHERE empresa_id =empresaId;	 
+	clientes a
+	WHERE a.empresa_id =empresaId;	 
+	
+	
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for getClientesFechas
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getClientesFechas`;
+delimiter ;;
+CREATE PROCEDURE `getClientesFechas`(IN `empresaId` int(10),IN ini VARCHAR(20),IN fin VARCHAR(20))
+BEGIN
+	
+SELECT
+	a.id,
+	a.empresa_id,
+	a.cedula,
+	a.nombre,
+	a.direccion,
+	a.negocio,
+	a.ubicacion,
+	a.telefon1,
+	a.telefon2,
+	a.estadocivil,
+	a.sexo,
+	a.email,
+	IF
+	(
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id = a.id 
+			AND empresa_id = empresaId 
+		) > 0,
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id = a.id 
+			AND empresa_id = empresaId 
+		),
+		0 
+	) AS balance,
+	a.estado
+FROM
+	clientes a
+WHERE
+	a.empresa_id = empresaId;
+	
 	
 	
 END
@@ -2265,22 +2369,48 @@ CREATE PROCEDURE `getClientesId`(IN `empresaId` int(10),IN clientesId int(10))
 BEGIN
 	
 SELECT
-	id,
-	empresa_id,
-	cedula,
-	nombre,
-	direccion,
-	negocio,
-	ubicacion,
-	telefon1,
-	telefon2,
-	estadocivil,
-	sexo,
-	email,
-	estado
+	a.id,
+	a.empresa_id,
+	a.cedula,
+	a.nombre,
+	a.direccion,
+	a.negocio,
+	a.ubicacion,
+	a.telefon1,
+	a.telefon2,
+	a.estadocivil,
+	a.sexo,
+	a.email,
+	IF
+	(
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id =a.id 
+			AND empresa_id = empresaId 
+		) > 0,
+		(
+		SELECT
+			SUM(
+				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
+			) 
+		FROM
+			prestamos 
+		WHERE
+			clientes_id = a.id 
+			AND empresa_id = empresaId 
+		),
+		0 
+	) AS balance,
+	a.estado
 FROM
-	clientes  
-	WHERE empresa_id =empresaId AND id = clientesId;	 
+	clientes a  
+	WHERE a.empresa_id =empresaId AND a.id = clientesId;	 
 	
 	
 END
@@ -3763,6 +3893,12 @@ SELECT
 	a.cuenta,
 	a.clave,
 	a.tipo_id,
+	c.nombre as nombreempresa,
+	c.telefonos,
+	c.direccion,
+	c.piepag1,
+	c.piepag2,
+	c.rnc,
 	b.descripcion AS tipo 
 FROM
 	usuario a
