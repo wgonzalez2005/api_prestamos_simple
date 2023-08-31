@@ -18,11 +18,12 @@ import { RutascobradoresModule } from './rutascobradores/rutascobradores.module'
 import { ClientesModule } from './clientes/clientes.module';
 import { PrestamosModule } from './prestamos/prestamos.module';
 import { PagosModule } from './pagos/pagos.module';
+import { ReportesModule } from './reportes/reportes.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
-  }), DatabaseModule, AuthModule, UsersModule, EmpresaModule, UsuariosModule, ConfiguracionModule, RutasModule, CobradoresModule, RutascobradoresModule, ClientesModule, PrestamosModule, PagosModule],
+  }), DatabaseModule, AuthModule, UsersModule, EmpresaModule, UsuariosModule, ConfiguracionModule, RutasModule, CobradoresModule, RutascobradoresModule, ClientesModule, PrestamosModule, PagosModule, ReportesModule],
   controllers: [AppController],
   providers: [
     {

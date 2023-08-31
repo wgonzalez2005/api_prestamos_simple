@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 30/08/2023 16:08:50
+ Date: 31/08/2023 15:59:44
 */
 
 SET NAMES utf8mb4;
@@ -641,10 +641,10 @@ INSERT INTO `cuotas` VALUES (27, 1, '8/8/2024', 12, 3552.11, 242.79, 0.00, 0.00,
 INSERT INTO `cuotas` VALUES (27, 1, '8/9/2024', 13, 3611.31, 183.59, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '8/10/2024', 14, 3671.50, 123.40, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '8/11/2024', 15, 3732.69, 62.21, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (28, 1, '28/9/2023', 1, 2233.50, 1250.00, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (28, 1, '28/10/2023', 2, 2289.34, 1194.16, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (28, 1, '28/11/2023', 3, 2346.57, 1136.93, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (28, 1, '28/12/2023', 4, 2405.24, 1078.26, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/9/2023', 1, 2233.50, 1250.00, 0.00, 2233.50, 1250.00, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/10/2023', 2, 2289.34, 1194.16, 0.00, 2289.34, 1194.16, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/11/2023', 3, 2346.57, 1136.93, 0.00, 2346.57, 1136.93, 0.00);
+INSERT INTO `cuotas` VALUES (28, 1, '28/12/2023', 4, 2405.24, 1078.26, 0.00, 571.24, 1078.26, 0.00);
 INSERT INTO `cuotas` VALUES (28, 1, '28/1/2024', 5, 2465.37, 1018.13, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (28, 1, '28/2/2024', 6, 2527.00, 956.50, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (28, 1, '27/3/2024', 7, 2590.18, 893.32, 0.00, 0.00, 0.00, 0.00);
@@ -1075,6 +1075,10 @@ INSERT INTO `detalle_pagos` VALUES (41, 1, 9, 'Saldo Cuota:#9', 1280.73, 52.00, 
 INSERT INTO `detalle_pagos` VALUES (41, 1, 10, 'Saldo Cuota:#10', 1293.53, 39.20, 0.00, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `detalle_pagos` VALUES (41, 1, 11, 'Saldo Cuota:#11', 1306.47, 26.26, 0.00, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `detalle_pagos` VALUES (41, 1, 12, 'Saldo Cuota:#12', 1319.53, 13.20, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (42, 1, 1, 'Saldo Cuota:#1', 2233.50, 1250.00, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (42, 1, 2, 'Saldo Cuota:#2', 2289.34, 1194.16, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (42, 1, 3, 'Saldo Cuota:#3', 2346.57, 1136.93, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (42, 1, 4, 'Abono Cuota:#4', 571.24, 1078.26, 0.00, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for empresa
@@ -1148,7 +1152,7 @@ CREATE TABLE `pagos`  (
   CONSTRAINT `fk_pagos_pagos_1` FOREIGN KEY (`empresa_id`) REFERENCES `empresa` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_pagos_pagos_2` FOREIGN KEY (`cobrador_id`) REFERENCES `cobradores` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_pagos_pagos_3` FOREIGN KEY (`prestamos_id`) REFERENCES `prestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pagos
@@ -1189,6 +1193,7 @@ INSERT INTO `pagos` VALUES (38, 1, 22, '0', '04/08/2023', 'Saldo Cuota:#12', 150
 INSERT INTO `pagos` VALUES (39, 1, 19, '0', '07/08/2023', 'Saldo Seguro:870.00,Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Saldo Cuota:#4,Saldo Cuota:#5,Abono Cuota:#6', 3947.65, 982.35, 870.00, 0.00, 0.00, 0.00, 0.00, 13, 1);
 INSERT INTO `pagos` VALUES (40, 1, 26, '0', '08/08/2023', 'Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Saldo Cuota:#4,Saldo Cuota:#5,Saldo Cuota:#6,Saldo Cuota:#7,Saldo Cuota:#8,Saldo Cuota:#9,Saldo Cuota:#10,Saldo Cuota:#11,Saldo Cuota:#12,Saldo Cuota:#13,Saldo Cuota:#14,Saldo Cuota:#15,Saldo Cuota:#16,Saldo Cuota:#17,Saldo Cuota:#18,Saldo Cuota:#19,Saldo Cuota:#20,Saldo Cuota:#21,Saldo Cuota:#22,Saldo Cuota:#23,Saldo Cuota:#24', 14999.96, 2972.68, 0.00, 0.00, 0.00, 0.00, 0.00, 12, 1);
 INSERT INTO `pagos` VALUES (41, 1, 21, '0', '08/08/2023', 'Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Saldo Cuota:#4,Saldo Cuota:#5,Saldo Cuota:#6,Saldo Cuota:#7,Saldo Cuota:#8,Saldo Cuota:#9,Saldo Cuota:#10,Saldo Cuota:#11,Saldo Cuota:#12', 14999.97, 992.79, 0.00, 0.00, 0.00, 0.00, 0.00, 13, 1);
+INSERT INTO `pagos` VALUES (42, 1, 28, '0', '31/08/2023', 'Saldo Seguro:2,900.00,Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Abono Cuota:#4', 7440.65, 4659.35, 2900.00, 0.00, 0.00, 0.00, 0.00, 12, 1);
 
 -- ----------------------------
 -- Table structure for plazos
@@ -1287,7 +1292,7 @@ INSERT INTO `prestamos` VALUES (24, '7/3/2023', 1, 1, 1, 18.00, 50000.00, 9908.9
 INSERT INTO `prestamos` VALUES (25, '8/9/2023', 6, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '8/9/2023', '7/8/2025', 0.00, 2900.00, 0.00, '', 5, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (26, '8/12/2023', 7, 1, 1, 18.00, 15000.00, 2972.68, 748.86, '8/9/2023', '7/8/2025', 0.00, 0.00, 0.00, '08/08/2023', 5, 24, 15000.00, 2972.68, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.50, 3794.90, '9/9/2023', '8/11/2024', 0.00, 2900.00, 0.00, '', 5, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
-INSERT INTO `prestamos` VALUES (28, '28/3/2023', 7, 1, 1, 30.00, 50000.00, 12703.08, 3483.50, '28/9/2023', '27/2/2025', 0.00, 2900.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (28, '28/3/2023', 7, 1, 1, 30.00, 50000.00, 12703.08, 3483.50, '28/9/2023', '27/2/2025', 0.00, 2900.00, 0.00, '31/08/2023', 5, 18, 7440.65, 4659.35, 0.00, 0.00, 2900.00, 3, 12, 1);
 
 -- ----------------------------
 -- Table structure for referencias
@@ -2302,65 +2307,6 @@ END
 delimiter ;
 
 -- ----------------------------
--- Procedure structure for getClientesFechas
--- ----------------------------
-DROP PROCEDURE IF EXISTS `getClientesFechas`;
-delimiter ;;
-CREATE PROCEDURE `getClientesFechas`(IN `empresaId` int(10),IN ini VARCHAR(20),IN fin VARCHAR(20))
-BEGIN
-	
-SELECT
-	a.id,
-	a.empresa_id,
-	a.cedula,
-	a.nombre,
-	a.direccion,
-	a.negocio,
-	a.ubicacion,
-	a.telefon1,
-	a.telefon2,
-	a.estadocivil,
-	a.sexo,
-	a.email,
-	IF
-	(
-		(
-		SELECT
-			SUM(
-				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
-			) 
-		FROM
-			prestamos 
-		WHERE
-			clientes_id = a.id 
-			AND empresa_id = empresaId 
-		) > 0,
-		(
-		SELECT
-			SUM(
-				( monto - cappag ) + ( interes - intpag ) + ( mora - morpag ) + ( otros - otrpag ) + ( seguro - segpag ) 
-			) 
-		FROM
-			prestamos 
-		WHERE
-			clientes_id = a.id 
-			AND empresa_id = empresaId 
-		),
-		0 
-	) AS balance,
-	a.estado
-FROM
-	clientes a
-WHERE
-	a.empresa_id = empresaId;
-	
-	
-	
-END
-;;
-delimiter ;
-
--- ----------------------------
 -- Procedure structure for getClientesId
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `getClientesId`;
@@ -2985,6 +2931,70 @@ BEGIN
 			coodeudor
 			FROM referencias
 			WHERE empresa_id =empresaId AND clientes_id = clientesId;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for getReportesPagosFechas
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getReportesPagosFechas`;
+delimiter ;;
+CREATE PROCEDURE `getReportesPagosFechas`(IN `empresaId` int(10),IN ini VARCHAR(20),IN fin VARCHAR(20))
+BEGIN
+	
+	SELECT 
+	 a.id,
+	 a.fecha,	 
+	 c.nombre,
+	 a.notransaccion as transaccion,
+	 a.tcapital,
+	 a.tinteres,
+	 a.tseguro,
+	 a.totros,
+	 a.tmora,
+	 a.balance,
+	 a.atrasos
+	 
+	 FROM pagos a INNER JOIN	prestamos b ON (a.empresa_id = b.empresa_id AND a.prestamos_id=b.id)
+	              INNER JOIN  clientes c ON  (b.empresa_id = c.empresa_id AND b.clientes_id=c.id)
+								WHERE a.empresa_id = empresaId AND STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) order by a.id asc;							 
+	
+	
+	
+	
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for getReportesPagosHoy
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getReportesPagosHoy`;
+delimiter ;;
+CREATE PROCEDURE `getReportesPagosHoy`(IN `empresaId` int(10))
+BEGIN
+	
+	SELECT 
+	 a.id,
+	 a.fecha,	 
+	 c.nombre,
+	 a.notransaccion as transaccion,
+	 a.tcapital,
+	 a.tinteres,
+	 a.tseguro,
+	 a.totros,
+	 a.tmora,
+	 a.balance,
+	 a.atrasos
+	 
+	 FROM pagos a INNER JOIN	prestamos b ON (a.empresa_id = b.empresa_id AND a.prestamos_id=b.id)
+	              INNER JOIN  clientes c ON  (b.empresa_id = c.empresa_id AND b.clientes_id=c.id)
+								WHERE a.empresa_id = empresaId AND  a.fecha =  DATE_FORMAT(now(), "%d/%m/%Y" ) order by a.id asc;							 
+	
+	
+	
+	
 END
 ;;
 delimiter ;
