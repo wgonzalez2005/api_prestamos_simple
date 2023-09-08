@@ -4,4 +4,5 @@ export class CreateReporteDto {
     prestamos_id:number;
     inicio:string;
     fin:string;
+    op:number;
 }

@@ -1,0 +1,19 @@
+1. Programa Opciones de Pagos
+	Cancelar el pago(Listo)
+                 Reimpirmir
+2. Prestamos 
+	Contratos(Basico, Extraordinario)
+3. Opcienes de Prestamos
+	Contratos(Basico, Extraordinario)
+4. Pagos
+	Recibo de pagos
+5. Ver prestamos(Todos)
+6. Reporte de Ingresos(Listo)
+7. Reporte de Estado del cliente
+8. Reporte de Prestamos
+9. Reporte de Atrasos
+10. Reporte de Situacion
+11. DashBoard
+
+
+

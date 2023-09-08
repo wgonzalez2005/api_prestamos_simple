@@ -7,11 +7,13 @@ import { EntityManager } from 'typeorm';
 export class ReportesService {
   constructor(private dataSource: EntityManager) {}
    
-  async getReportesPagosHoy(dto: CreateReporteDto): Promise<any | undefined> {  
+  async getReportesPagosHoy(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto); 
     try {
-      const empresa = await this.dataSource.query('call getReportesPagosHoy(?)', [
-        dto.empresa_id]);   
-      return empresa[0];
+      const reporte = await this.dataSource.query('call getReportesPagosHoy(?,?)', [
+        dto.empresa_id,dto.op]); 
+        console.log(reporte[0]);   
+      return reporte[0];
     } catch (error) {
       console.log(error);  
     }
@@ -19,9 +21,29 @@ export class ReportesService {
 
   async getReportesPagosFechas(dto: CreateReporteDto): Promise<any | undefined> {  
     try {
-      const empresa = await this.dataSource.query('call getReportesPagosFechas(?,?,?)', [
-        dto.empresa_id,dto.inicio,dto.fin,]);   
-      return empresa[0];
+      const reporte = await this.dataSource.query('call getReportesPagosFechas(?,?,?,?)', [
+        dto.empresa_id,dto.inicio,dto.fin,dto.op]);   
+      return reporte[0];
+    } catch (error) {
+      console.log(error);  
+    }
+  }
+
+  async getReportesPrestamosClientes(dto: CreateReporteDto): Promise<any | undefined> {  
+    try {
+      const reporte = await this.dataSource.query('call getPrestamosClientesId(?,?)', [
+        dto.empresa_id,dto.clientes_id]);   
+      return reporte[0];
+    } catch (error) {
+      console.log(error);  
+    }
+  }
+
+  async getReportesPrestamosClientesBalance(dto: CreateReporteDto): Promise<any | undefined> {  
+    try {
+      const reporte = await this.dataSource.query('call getPrestamosClientesIdBalance(?,?,?)', [
+        dto.empresa_id,dto.clientes_id,dto.op]);   
+      return reporte[0];
     } catch (error) {
       console.log(error);  
     }

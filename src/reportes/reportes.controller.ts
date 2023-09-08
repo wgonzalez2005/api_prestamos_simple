@@ -18,5 +18,16 @@ export class ReportesController {
     return this.reportesService.getReportesPagosFechas(dto[0]);
   }
 
+
+  @Post("getReportesPrestamosClientesId")
+  async getReportesPrestamosClientes(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportesPrestamosClientes(dto[0]);
+  }
+
+  @Post("getReportesPrestamosClientesBalance")
+  async getReportesPrestamosClientesBalance(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportesPrestamosClientesBalance(dto[0]);
+  }
+
   
 }

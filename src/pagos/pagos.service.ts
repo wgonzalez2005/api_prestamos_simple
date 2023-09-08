@@ -102,8 +102,8 @@ export class PagosService {
     try {
       const buscar = '%' + dto.buscar + '%';
       const pagos = await this.dataSource.query(
-        'call BuscarPagosClientes(?,?)',
-        [dto.empresa_id, buscar],
+        'call BuscarPagosClientes(?,?,?)',
+        [dto.empresa_id, buscar,dto.op],
       );
       return pagos[0];
     } catch (error) {
@@ -115,9 +115,11 @@ export class PagosService {
     console.log(dto);
     try {
       const pagos = await this.dataSource.query(
-        'call getPagosClientesFechas(?,?,?)',
-        [dto.empresa_id, dto.fechaini, dto.fechafin],
+        'call getPagosClientesFechas(?,?,?,?)',
+        [dto.empresa_id, dto.fechaini, dto.fechafin,dto.op],
       );
+
+      console.log(pagos[0]);
       return pagos[0];
     } catch (error) {
       console.log(error);
@@ -131,6 +133,41 @@ export class PagosService {
         'call getDetallePagos(?,?)',
         [dto.empresa_id,  dto.pagos_id],
       );
+      return pagos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async CancelarPagos(dto: CreatePagoDto,): Promise<any | undefined> {
+    console.log(dto);
+    try {
+      const pagos = await this.dataSource.query(
+        'call CancelarPagos(?,?,?,?,?,?,?,?,?,?)',
+        [dto.empresa_id,  dto.prestamos_id,dto.pagos_id,dto.tcapital,dto.tinteres,dto.tseguro,dto.totros,dto.tmora,dto.motivo,dto.usuario_id],
+      );
+
+
+      for (let i = 0; i < dto.cuotas.length; i++) {
+        const r: any = dto.cuotas[i];       
+        try {
+          const cuotas = await this.dataSource.query(
+                  'call ActualizarCuotasPagos(?,?,?,?,?,?)',
+                  [                    
+                    dto.empresa_id,
+                    dto.prestamos_id,
+                    r.npago,
+                    r.pcapital,
+                    r.pinteres,  
+                    r.pseguro 
+                  ],
+                );   
+
+              } catch (error) {
+                console.log(error);
+              }
+            }     
+
       return pagos[0];
     } catch (error) {
       console.log(error);

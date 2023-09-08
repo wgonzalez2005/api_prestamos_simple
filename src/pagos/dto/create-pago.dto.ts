@@ -19,4 +19,8 @@ export class CreatePagoDto {
     fechaini:string;
     fechafin:string;
     pagos_id:number;
+    motivo:string;
+    usuario_id:number;
+    cuotas:[];
+    op:number; 
 }

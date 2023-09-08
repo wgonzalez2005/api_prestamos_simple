@@ -42,6 +42,9 @@ export class PagosController {
     return this.pagosService.getDetallePagos(dto[0]);
   }
   
-
+  @Post('CancelarPagos')
+  CancelarPagos(@Body() dto: CreatePagoDto) {    
+    return this.pagosService.CancelarPagos(dto[0]);
+  }
   
 }
