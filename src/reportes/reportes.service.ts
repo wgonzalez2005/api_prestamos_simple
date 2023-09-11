@@ -50,17 +50,28 @@ export class ReportesService {
   }
   
   async getCuotasPrestamosAll(dto: CreateReporteDto): Promise<any | undefined> { 
-    console.log(dto);  
+
     try {
       const reporte = await this.dataSource.query('call getCuotasPrestamosAll(?,?)', [
         dto.empresa_id,dto.prestamos_id]); 
-        console.log(reporte[0]);   
+        
       return reporte[0];
     } catch (error) {
       console.log(error);  
     }
   }
 
+  async getReportesPrestamosAll(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);  
+    try {
+      const reporte = await this.dataSource.query('call getReportePrestamosAll(?,?,?,?)', [
+        dto.empresa_id,dto.inicio,dto.fin,dto.op]); 
+        console.log(reporte[0]);   
+      return reporte[0];
+    } catch (error) {
+      console.log(error);  
+    }
+  }
   
 
   
