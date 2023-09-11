@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100425
+ Source Server Version : 100427
  Source Host           : localhost:3306
  Source Schema         : db_prestamos_simple
 
  Target Server Type    : MySQL
- Target Server Version : 100425
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 08/09/2023 17:08:21
+ Date: 10/09/2023 23:03:05
 */
 
 SET NAMES utf8mb4;
@@ -2592,6 +2592,44 @@ END
 delimiter ;
 
 -- ----------------------------
+-- Procedure structure for getCuotasPrestamosAll
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getCuotasPrestamosAll`;
+delimiter ;;
+CREATE PROCEDURE `getCuotasPrestamosAll`(IN `empresaid` int(10),IN `prestamosId` int(10))
+BEGIN
+		
+SELECT
+	npago AS linea,
+	fecha,
+	( capital - pcapital ) AS capital,
+	( interes - pinteres ) AS interes,
+	( seguro - pseguro ) AS seguro,
+IF
+	(
+		( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) = 0,
+		"PAGADA",
+	IF
+		(
+			(
+				( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) > 0 
+				AND STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) 
+			),
+			"VENCIDA",
+			"A TIEMPO" 
+		) 
+	) AS estado 
+FROM
+	cuotas 
+WHERE
+	empresa_id = empresaid 
+	AND prestamos_id = prestamosId;
+	
+END
+;;
+delimiter ;
+
+-- ----------------------------
 -- Procedure structure for getCuotasPrestamosClientes
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `getCuotasPrestamosClientes`;
@@ -3042,6 +3080,7 @@ BEGIN
 	 a.monto,
 	 a.interes,	
 	 a.mora,
+	 (a.seguro-a.segpag) as seguro,
 	  a.vence,
 		a.fecultpag as ultimo,
 		(a.monto+a.mora+a.interes+a.seguro+a.otros) as total,
@@ -3075,6 +3114,7 @@ BEGIN
 	 a.interes,	
 	 a.mora,
 	  a.vence,
+		(a.seguro-a.segpag) as seguro,
 		a.fecultpag as ultimo,
 		(a.monto+a.mora+a.interes+a.seguro+a.otros) as total,
 		(a.cappag+a.intpag+a.otrpag+a.morpag+a.segpag) as pagado,
@@ -3095,6 +3135,7 @@ BEGIN
 	 a.interes,	
 	 a.mora,
 	  a.vence,
+		(a.seguro-a.segpag) as seguro,
 		a.fecultpag as ultimo,
 		(a.monto+a.mora+a.interes+a.seguro+a.otros) as total,
 		(a.cappag+a.intpag+a.otrpag+a.morpag+a.segpag) as pagado,
@@ -3117,6 +3158,7 @@ BEGIN
 	 a.interes,	
 	 a.mora,
 	  a.vence,
+		(a.seguro-a.segpag) as seguro,
 		a.fecultpag as ultimo,
 		(a.monto+a.mora+a.interes+a.seguro+a.otros) as total,
 		(a.cappag+a.intpag+a.otrpag+a.morpag+a.segpag) as pagado,
@@ -3267,6 +3309,161 @@ BEGIN
 			coodeudor
 			FROM referencias
 			WHERE empresa_id =empresaId AND clientes_id = clientesId;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for getReportePrestamosAll
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getReportePrestamosAll`;
+delimiter ;;
+CREATE PROCEDURE `getReportePrestamosAll`(IN `empresaId` int(10),IN inicio VARCHAR(20),IN fin VARCHAR(20), IN op int(1))
+BEGIN
+	
+		
+IF op = 1 THEN 
+
+	SELECT
+	   a.id,
+		 a.fecha,
+		 a.clientes_id,
+     b.nombre,
+		 b.telefon1,
+		 b.telefon2,
+		 c.descripcion,
+		 a.minteres,
+		 (a.monto+a.interes+a.seguro+a.otros+a.mora) as total,
+		 (a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag) as pagado,
+		 ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag)) as balance,
+		 a.cuota,
+		 a.vence,
+		 a.fecultpag as ultimo,
+		 d.descripcion as plazo,
+		 a.cantidadplazos as cantidad,
+		 e.nombres as ruta,
+		 h.nombre as usuario,		 
+		 IF(a.estado=1,"Activo","Cancelado") as estado,
+		 IF(((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0,"BALANCE","SALDADO") as estatus
+		 	 
+		 FROM prestamos a INNER JOIN clientes b ON (a.empresa_id=b.empresa_id AND a.clientes_id = b.id)
+		                  INNER JOIN tipoprestamos c ON a.tipoprestamos_id = c.id
+											INNER JOIN plazos d ON a.plazo_id=d.id
+											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
+											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
+											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
+											WHERE STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) AND a.empresa_id=empresaId order by a.id asc;	
+
+ELSE IF op = 2 THEN 
+
+	SELECT
+	   a.id,
+		 a.fecha,
+		 a.clientes_id,
+     b.nombre,
+		 b.telefon1,
+		 b.telefon2,
+		 c.descripcion,
+		 a.minteres,
+		 (a.monto+a.interes+a.seguro+a.otros+a.mora) as total,
+		 (a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag) as pagado,
+		 ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag)) as balance,
+		 a.cuota,
+		 a.vence,
+		 a.fecultpag as ultimo,
+		 d.descripcion as plazo,
+		 a.cantidadplazos as cantidad,
+		 e.nombres as ruta,
+		 h.nombre as usuario,		 
+		 IF(a.estado=1,"Activo","Cancelado") as estado,
+		 IF(((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0,"BALANCE","SALDADO") as estatus
+		 	 
+		 FROM prestamos a INNER JOIN clientes b ON (a.empresa_id=b.empresa_id AND a.clientes_id = b.id)
+		                  INNER JOIN tipoprestamos c ON a.tipoprestamos_id = c.id
+											INNER JOIN plazos d ON a.plazo_id=d.id
+											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
+											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
+											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
+											WHERE STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) 
+											AND ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0 AND a.empresa_id=empresaId order by a.id asc;
+
+
+ELSE IF op = 3 THEN 
+
+SELECT
+	   a.id,
+		 a.fecha,
+		 a.clientes_id,
+     b.nombre,
+		 b.telefon1,
+		 b.telefon2,
+		 c.descripcion,
+		 a.minteres,
+		 (a.monto+a.interes+a.seguro+a.otros+a.mora) as total,
+		 (a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag) as pagado,
+		 ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag)) as balance,
+		 a.cuota,
+		 a.vence,
+		 a.fecultpag as ultimo,
+		 d.descripcion as plazo,
+		 a.cantidadplazos as cantidad,
+		 e.nombres as ruta,
+		 h.nombre as usuario,		 
+		 IF(a.estado=1,"Activo","Cancelado") as estado,
+		 IF(((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0,"BALANCE","SALDADO") as estatus
+		 	 
+		 FROM prestamos a INNER JOIN clientes b ON (a.empresa_id=b.empresa_id AND a.clientes_id = b.id)
+		                  INNER JOIN tipoprestamos c ON a.tipoprestamos_id = c.id
+											INNER JOIN plazos d ON a.plazo_id=d.id
+											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
+											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
+											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
+											WHERE STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) 
+											AND ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))=0 AND a.empresa_id=empresaId order by a.id asc;
+
+
+ELSE
+
+SELECT
+	   a.id,
+		 a.fecha,
+		 a.clientes_id,
+     b.nombre,
+		 b.telefon1,
+		 b.telefon2,
+		 c.descripcion,
+		 a.minteres,
+		 (a.monto+a.interes+a.seguro+a.otros+a.mora) as total,
+		 (a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag) as pagado,
+		 ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag)) as balance,
+		 a.cuota,
+		 a.vence,
+		 a.fecultpag as ultimo,
+		 d.descripcion as plazo,
+		 a.cantidadplazos as cantidad,
+		 e.nombres as ruta,
+		 h.nombre as usuario,		 
+		 IF(a.estado=1,"Activo","Cancelado") as estado,
+		 IF(((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0,"BALANCE","SALDADO") as estatus
+		 	 
+		 FROM prestamos a INNER JOIN clientes b ON (a.empresa_id=b.empresa_id AND a.clientes_id = b.id)
+		                  INNER JOIN tipoprestamos c ON a.tipoprestamos_id = c.id
+											INNER JOIN plazos d ON a.plazo_id=d.id
+											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
+											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
+											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
+											WHERE a.id IN (SELECT prestamos_id FROM cuotas WHERE ((capital-pcapital)+(interes-pinteres)+seguro-pseguro)>0 AND STR_TO_DATE(fecha, "%d/%m/%Y" )< DATE_FORMAT(now(), "%Y-%m-%d") AND a.empresa_id=empresa_id AND prestamos_id=a.id) AND a.empresa_id=empresaId;
+
+
+
+END IF;
+END IF;
+END IF;
+
+
+
+
+
 END
 ;;
 delimiter ;

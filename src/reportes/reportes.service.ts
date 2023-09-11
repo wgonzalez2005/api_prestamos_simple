@@ -8,11 +8,11 @@ export class ReportesService {
   constructor(private dataSource: EntityManager) {}
    
   async getReportesPagosHoy(dto: CreateReporteDto): Promise<any | undefined> { 
-    console.log(dto); 
+    
     try {
       const reporte = await this.dataSource.query('call getReportesPagosHoy(?,?)', [
         dto.empresa_id,dto.op]); 
-        console.log(reporte[0]);   
+        
       return reporte[0];
     } catch (error) {
       console.log(error);  
@@ -48,6 +48,19 @@ export class ReportesService {
       console.log(error);  
     }
   }
+  
+  async getCuotasPrestamosAll(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);  
+    try {
+      const reporte = await this.dataSource.query('call getCuotasPrestamosAll(?,?)', [
+        dto.empresa_id,dto.prestamos_id]); 
+        console.log(reporte[0]);   
+      return reporte[0];
+    } catch (error) {
+      console.log(error);  
+    }
+  }
+
   
 
   

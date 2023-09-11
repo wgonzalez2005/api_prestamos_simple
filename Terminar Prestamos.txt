@@ -9,7 +9,7 @@
 	Recibo de pagos
 5. Ver prestamos(Todos)
 6. Reporte de Ingresos(Listo)
-7. Reporte de Estado del cliente
+7. Reporte de Estado del cliente(Listo)
 8. Reporte de Prestamos
 9. Reporte de Atrasos
 10. Reporte de Situacion
