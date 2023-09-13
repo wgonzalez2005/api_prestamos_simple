@@ -44,4 +44,29 @@ export class ReportesController {
     return this.reportesService.getPrestamosClientesId(dto[0]);
   }
   
+  @Post("getReportePagosPrestamosId")
+  async getReportePagosPrestamosId(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportePagosPrestamosId(dto[0]);
+  }
+  
+  @Post("getReportesPrestamosAll")
+  async getReportesPrestamosAll(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportesPrestamosAll(dto[0]);
+  }
+
+  @Post("getReportePrestamosAlDia")
+  async getReportePrestamosAlDia(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportePrestamosAlDia(dto[0]);
+  }
+
+  @Post("getReportePagosFecha")
+  async getReportePagosFecha(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportePagosFecha(dto[0]);
+  }
+
+  @Post("getReportePrestamosAtrasos")
+  async getReportePrestamosAtrasos(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getReportePrestamosAtrasos(dto[0]);
+  }
+  
 }

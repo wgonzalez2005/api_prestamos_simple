@@ -74,11 +74,11 @@ export class ReportesService {
   }
   
   async getPrestamosClientesAll(dto: CreateReporteDto): Promise<any | undefined> { 
-
+    console.log(dto);
     try {
-      const reporte = await this.dataSource.query('call getPrestamosClientesAll(?)', [
-        dto.empresa_id]); 
-        
+      const reporte = await this.dataSource.query('call getReportePrestamosClientesAll(?,?)', [
+        dto.empresa_id,dto.op]); 
+        console.log(reporte[0]);
       return reporte[0];
     } catch (error) {
       console.log(error);  
@@ -88,12 +88,63 @@ export class ReportesService {
   async getPrestamosClientesId(dto: CreateReporteDto): Promise<any | undefined> { 
    console.log(dto);
     try {
-      const reporte = await this.dataSource.query('call getPrestamoClientesId(?,?)', [
-        dto.empresa_id,dto.clientes_id]); 
-        
+      const reporte = await this.dataSource.query('call getReportePrestamoClientesId(?,?,?)', [
+        dto.empresa_id,dto.clientes_id,dto.op]); 
+        console.log(reporte[0]);
       return reporte[0];
     } catch (error) {
       console.log(error);  
     }
   }  
+
+  async getReportePagosPrestamosId(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);
+     try {
+       const reporte = await this.dataSource.query('call getReportePagosPrestamosId(?,?)', [
+         dto.empresa_id,dto.prestamos_id]); 
+         console.log(reporte[0]);
+       return reporte[0];
+     } catch (error) {
+       console.log(error);  
+     }
+   }  
+
+
+   async getReportePrestamosAlDia(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);
+     try {
+       const reporte = await this.dataSource.query('call getReportePrestamosAlDia(?,?,?)', [
+         dto.empresa_id,dto.inicio,dto.fin]); 
+         console.log(reporte[0]);
+       return reporte[0];
+     } catch (error) {
+       console.log(error);  
+     }
+   }  
+
+
+   async getReportePagosFecha(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);
+     try {
+       const reporte = await this.dataSource.query('call getReportePagosFecha(?,?,?)', [
+         dto.empresa_id,dto.inicio,dto.fin]); 
+         console.log(reporte[0]);
+       return reporte[0];
+     } catch (error) {
+       console.log(error);  
+     }
+   }  
+
+
+   async getReportePrestamosAtrasos(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);
+     try {
+       const reporte = await this.dataSource.query('call getReportePrestamosAtrasos(?)', [
+         dto.empresa_id]); 
+         console.log(reporte[0]);
+       return reporte[0];
+     } catch (error) {
+       console.log(error);  
+     }
+   }  
 }
