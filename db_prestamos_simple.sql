@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 13/09/2023 15:58:53
+ Date: 14/09/2023 15:45:57
 */
 
 SET NAMES utf8mb4;
@@ -1191,7 +1191,7 @@ CREATE TABLE `empresa`  (
 -- ----------------------------
 -- Records of empresa
 -- ----------------------------
-INSERT INTO `empresa` VALUES (1, 'PRESTAMOS FACIL', 'Simpre presente', '011222111', 'LOS ALAMOS, SANTIAGO', '829-250-0000', 'Verifique el Prestamos', 'Verifique el recibo', 1, 1, 'prestamos@gmail.com', 1);
+INSERT INTO `empresa` VALUES (1, 'Vargas Guillen & Asoc, S.R.L', 'Simpre presente', '1-31-364195', 'Calle 1ra,#7,Edif.Empresarial D\'León, Mod.4,Ens.Román II Santiago, Rep. Dom.', '829-345-0018', 'Verifique el Prestamos', 'Verifique el recibo', 1, 1, 'mail@gmail.com', 1);
 
 -- ----------------------------
 -- Table structure for moras
@@ -3597,7 +3597,7 @@ BEGIN
 		 a.cuota,
 		 a.vence,
 		 (a.seguro-a.segpag) as seguro,
-		 a.fecultpag as ultimo,
+		 a.fecultpag as ultimo,	
 		 d.descripcion as plazo,
 		  (SELECT count(*) FROM cuotas WHERE empresa_id=a.empresa_id AND prestamos_id=a.id AND ((capital-pcapital)+(interes-pinteres)+(seguro-pseguro))=0) as pagadas,
 		 a.cantidadplazos as cantidad,
@@ -3614,9 +3614,9 @@ BEGIN
 											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
 											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
 											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
-											WHERE STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) AND a.empresa_id=empresaId AND ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0  order by a.id asc;
+											WHERE STR_TO_DATE( a.fecha, "%d/%m/%Y" ) BETWEEN  STR_TO_DATE(ini, "%d/%m/%Y" ) AND STR_TO_DATE( fin, "%d/%m/%Y" ) AND a.empresa_id=empresaId   order by a.id asc;
 	
-	
+	#AND ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0
 
 END
 ;;
