@@ -2,17 +2,17 @@
 	Cancelar el pago(Listo)
                  Reimpirmir
 2. Prestamos 
-	Contratos(Basico, Extraordinario)
+	Contratos(Basico, Extraordinario)(Listo)
 3. Opcienes de Prestamos
-	Contratos(Basico, Extraordinario)
+	Contratos(Basico, Extraordinario)(Listo)
 4. Pagos
 	Recibo de pagos
 5. Ver prestamos(Todos)
 6. Reporte de Ingresos(Listo)
 7. Reporte de Estado del cliente(Listo)
-8. Reporte de Prestamos
-9. Reporte de Atrasos
-10. Reporte de Situacion
+8. Reporte de Prestamos(Listo)
+9. Reporte de Atrasos(Listo)
+10. Reporte de Situacion(Listo)
 11. DashBoard
 
 

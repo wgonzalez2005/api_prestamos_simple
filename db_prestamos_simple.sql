@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 15/09/2023 15:16:57
+ Date: 18/09/2023 16:18:09
 */
 
 SET NAMES utf8mb4;
@@ -135,7 +135,7 @@ CREATE TABLE `configuracion`  (
 -- ----------------------------
 -- Records of configuracion
 -- ----------------------------
-INSERT INTO `configuracion` VALUES (1, 1, 'MORA', 3.10, 1);
+INSERT INTO `configuracion` VALUES (1, 1, 'MORA', 25.45, 1);
 INSERT INTO `configuracion` VALUES (2, 1, 'SEGURO', 5.80, 1);
 INSERT INTO `configuracion` VALUES (3, 1, 'DIAS', 2.00, 1);
 
@@ -695,6 +695,21 @@ INSERT INTO `cuotas` VALUES (30, 1, '10/12/2024', 15, 1639.55, 229.78, 0.00, 0.0
 INSERT INTO `cuotas` VALUES (30, 1, '10/1/2025', 16, 1694.20, 175.13, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (30, 1, '10/2/2025', 17, 1750.67, 118.66, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (30, 1, '10/3/2025', 18, 1809.03, 60.30, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '3/10/2023', 1, 7869.87, 5000.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '18/10/2023', 2, 8132.20, 4737.67, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '2/11/2023', 3, 8403.27, 4466.60, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '17/11/2023', 4, 8683.38, 4186.49, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '2/12/2023', 5, 8972.83, 3897.04, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '17/12/2023', 6, 9271.92, 3597.95, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '1/1/2024', 7, 9580.99, 3288.88, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '16/1/2024', 8, 9900.35, 2969.52, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '31/1/2024', 9, 10230.36, 2639.51, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '15/2/2024', 10, 10571.38, 2298.49, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '1/3/2024', 11, 10923.75, 1946.12, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '16/3/2024', 12, 11287.88, 1581.99, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '31/3/2024', 13, 11664.14, 1205.73, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '15/4/2024', 14, 12052.95, 816.92, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (31, 1, '30/4/2024', 15, 12454.71, 415.16, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for detalle_pagos
@@ -1358,7 +1373,7 @@ CREATE TABLE `prestamos`  (
   CONSTRAINT `fk_prestamos_prestamos_3` FOREIGN KEY (`ruta_id`) REFERENCES `rutas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_4` FOREIGN KEY (`plazo_id`) REFERENCES `plazos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_5` FOREIGN KEY (`tipoprestamos_id`) REFERENCES `tipoprestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of prestamos
@@ -1393,6 +1408,7 @@ INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.5
 INSERT INTO `prestamos` VALUES (28, '28/3/2023', 7, 1, 1, 30.00, 50000.00, 12703.08, 3483.50, '28/9/2023', '27/2/2025', 0.00, 2900.00, 0.00, '31/08/2023', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (29, '11/3/2023', 7, 1, 1, 40.00, 50000.00, 17295.80, 3738.66, '11/10/2023', '10/3/2025', 0.00, 2900.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (30, '11/09/2023', 5, 1, 1, 40.00, 25000.00, 8647.91, 1869.33, '11/10/2023', '10/3/2025', 0.00, 1450.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (31, '18/09/2023', 5, 1, 1, 40.00, 150000.00, 43048.07, 12869.87, '3/10/2023', '30/4/2024', 0.00, 8700.00, 0.00, '', 4, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 
 -- ----------------------------
 -- Table structure for referencias
