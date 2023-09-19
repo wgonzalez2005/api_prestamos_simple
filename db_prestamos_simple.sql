@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100425
+ Source Server Version : 100427
  Source Host           : localhost:3306
  Source Schema         : db_prestamos_simple
 
  Target Server Type    : MySQL
- Target Server Version : 100425
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 19/09/2023 16:11:08
+ Date: 19/09/2023 18:24:50
 */
 
 SET NAMES utf8mb4;
@@ -790,6 +790,69 @@ INSERT INTO `cuotas` VALUES (35, 1, '18/12/2024', 15, 1639.55, 229.78, 0.00, 0.0
 INSERT INTO `cuotas` VALUES (35, 1, '18/1/2025', 16, 1694.20, 175.13, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (35, 1, '18/2/2025', 17, 1750.67, 118.66, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (35, 1, '18/3/2025', 18, 1809.03, 60.30, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '19/10/2023', 1, 1311.65, 833.33, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '19/11/2023', 2, 1355.37, 789.61, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '19/12/2023', 3, 1400.55, 744.43, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '19/01/2024', 4, 1447.23, 697.75, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '19/02/2024', 5, 1495.47, 649.51, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/03/2024', 6, 1545.32, 599.66, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/04/2024', 7, 1596.83, 548.15, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/05/2024', 8, 1650.06, 494.92, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/06/2024', 9, 1705.06, 439.92, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/07/2024', 10, 1761.90, 383.08, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/08/2024', 11, 1820.63, 324.35, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/09/2024', 12, 1881.32, 263.66, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/10/2024', 13, 1944.03, 200.95, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/11/2024', 14, 2008.83, 136.15, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (36, 1, '18/12/2024', 15, 2075.79, 69.19, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '18/12/2023', 1, 4178.16, 5000.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '17/03/2024', 2, 4317.43, 4860.73, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '15/06/2024', 3, 4461.35, 4716.81, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '13/09/2024', 4, 4610.06, 4568.10, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '12/12/2024', 5, 4763.73, 4414.43, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '12/03/2025', 6, 4922.52, 4255.64, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '10/06/2025', 7, 5086.60, 4091.56, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '08/09/2025', 8, 5256.15, 3922.01, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '07/12/2025', 9, 5431.36, 3746.80, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '07/03/2026', 10, 5612.41, 3565.75, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '05/06/2026', 11, 5799.49, 3378.67, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '03/09/2026', 12, 5992.80, 3185.36, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '02/12/2026', 13, 6192.56, 2985.60, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '02/03/2027', 14, 6398.98, 2779.18, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '31/05/2027', 15, 6612.28, 2565.88, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '29/08/2027', 16, 6832.69, 2345.47, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '27/11/2027', 17, 7060.45, 2117.71, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '25/02/2028', 18, 7295.79, 1882.37, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '25/05/2028', 19, 7538.99, 1639.17, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '23/08/2028', 20, 7790.29, 1387.87, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '21/11/2028', 21, 8049.96, 1128.20, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '19/02/2029', 22, 8318.29, 859.87, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '20/05/2029', 23, 8595.57, 582.59, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (37, 1, '18/08/2029', 24, 8882.09, 296.07, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '26/09/2023', 1, 417.82, 500.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '03/10/2023', 2, 431.75, 486.07, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '10/10/2023', 3, 446.14, 471.68, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '17/10/2023', 4, 461.01, 456.81, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '24/10/2023', 5, 476.38, 441.44, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '31/10/2023', 6, 492.26, 425.56, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '07/11/2023', 7, 508.67, 409.15, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '14/11/2023', 8, 525.62, 392.20, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '21/11/2023', 9, 543.14, 374.68, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '28/11/2023', 10, 561.25, 356.57, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '05/12/2023', 11, 579.95, 337.87, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '12/12/2023', 12, 599.29, 318.53, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '19/12/2023', 13, 619.26, 298.56, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '26/12/2023', 14, 639.90, 277.92, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '02/01/2024', 15, 661.23, 256.59, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '09/01/2024', 16, 683.28, 234.54, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '16/01/2024', 17, 706.05, 211.77, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '23/01/2024', 18, 729.59, 188.23, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '30/01/2024', 19, 753.91, 163.91, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '06/02/2024', 20, 779.04, 138.78, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '13/02/2024', 21, 805.00, 112.82, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '20/02/2024', 22, 831.84, 85.98, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '27/02/2024', 23, 859.57, 58.25, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (38, 1, '05/03/2024', 24, 888.22, 29.60, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for detalle_pagos
@@ -1452,12 +1515,14 @@ CREATE TABLE `prestamos`  (
   INDEX ```cempresa```(`empresa_id`) USING BTREE,
   INDEX ```codcob```(`cobrador_id`) USING BTREE,
   INDEX ```codrut```(`ruta_id`) USING BTREE,
+  INDEX `fk_prestamos_prestamos_4`(`plazo_id`) USING BTREE,
+  INDEX `fk_prestamos_prestamos_5`(`tipoprestamos_id`) USING BTREE,
   CONSTRAINT `fk_prestamos_prestamos_1` FOREIGN KEY (`clientes_id`) REFERENCES `clientes` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_2` FOREIGN KEY (`empresa_id`) REFERENCES `empresa` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_3` FOREIGN KEY (`ruta_id`) REFERENCES `rutas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_4` FOREIGN KEY (`plazo_id`) REFERENCES `plazos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_prestamos_prestamos_5` FOREIGN KEY (`tipoprestamos_id`) REFERENCES `tipoprestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of prestamos
@@ -1497,6 +1562,9 @@ INSERT INTO `prestamos` VALUES (32, '19/09/2023', 5, 1, 1, 40.00, 150000.00, 702
 INSERT INTO `prestamos` VALUES (33, '19/09/2023', 6, 1, 1, 40.00, 15000.00, 5188.73, 1121.60, '19/10/2023', '18/3/2025', 0.00, 0.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (34, '19/09/2023', 6, 1, 1, 40.00, 15000.00, 5188.73, 1121.60, '19/10/2023', '18/3/2025', 0.00, 0.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (35, '19/09/2023', 1, 1, 1, 40.00, 25000.00, 8647.91, 1869.33, '19/10/2023', '18/3/2025', 0.00, 0.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (36, '19/09/2023', 5, 1, 1, 40.00, 25000.00, 7174.66, 2144.98, '19/10/2023', '18/12/2024', 0.00, 0.00, 0.00, '', 5, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (37, '19/09/2023', 1, 1, 1, 40.00, 150000.00, 70275.84, 9178.16, '18/12/2023', '18/08/2029', 0.00, 0.00, 0.00, '', 6, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
+INSERT INTO `prestamos` VALUES (38, '19/09/2023', 8, 1, 1, 40.00, 15000.00, 7027.51, 917.82, '26/09/2023', '05/03/2024', 0.00, 0.00, 0.00, '', 3, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
 
 -- ----------------------------
 -- Table structure for referencias
@@ -3012,7 +3080,7 @@ BEGIN
 			b.inicio,
 			b.vence,
 			b.cantidadplazos,
-			d.plazo
+			d.descripcion as plazo
 					
 			FROM clientes a INNER JOIN prestamos b ON(a.empresa_id = b.empresa_id AND a.id = b.clientes_id)
 			                INNER JOIN plazos d ON(b.plazo_id=d.id) WHERE a.empresa_id = empresaid AND b.id=prestamosid;
