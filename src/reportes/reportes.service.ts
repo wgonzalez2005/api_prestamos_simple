@@ -146,5 +146,18 @@ export class ReportesService {
      } catch (error) {
        console.log(error);  
      }
-   }  
+   } 
+    
+   async getImprimirPrestamos(dto: CreateReporteDto): Promise<any | undefined> { 
+    console.log(dto);
+     try {
+       const reporte = await this.dataSource.query('call getImprimirPrestamos(?,?)', [
+         dto.empresa_id,dto.prestamos_id]);          
+       return reporte[0];
+     } catch (error) {
+       console.log(error);  
+     }
+   }   
+
+ 
 }

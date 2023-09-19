@@ -147,14 +147,13 @@ export class PrestamosService {
       
 
          try {
-           const prestamos = await this.dataSource.query('call getImprimirPrestamos(?,?)', [
+           const prestamos1 = await this.dataSource.query('call getImprimirPrestamos(?,?)', [
              dto.empresa_id,id]); 
-           return prestamos[0];
+           return prestamos1[0];
          } catch (error) {
            console.log(error);  
          }
        
-      return prestamos[0];
 
     } catch (error) {
       console.log(error);
