@@ -37,7 +37,7 @@ export class ClientesService {
   }
 
   async InsertarTrabajos(dto: CreateClienteDto): Promise<any | undefined> {
-      
+   
       for (let i = 0; i < dto.trabajos.length; i++) {
           const r: any = dto.trabajos[i];       
           try {
@@ -62,17 +62,20 @@ export class ClientesService {
   }
 
   async InsertarReferencias(dto: CreateClienteDto,): Promise<any | undefined> {
+    console.log(dto.referencias)
     try {
       for (let i = 0; i < dto.referencias.length; i++) {
         const r: any = dto.referencias[i];       
         try {
           const referencias = await this.dataSource.query(
-                  'call InsertarReferencias(?,?,?,?,?,?,?)',
+                  'call InsertarReferencias(?,?,?,?,?,?,?,?,?)',
                   [
                     r.clientes_id,
                     r.empresa_id,
+                    r.cedula,
                     r.nombres,
                     r.direccion,
+                    r.sexo,
                     r.telefono,
                    r.parentezco,
                    r.coodeudor,
