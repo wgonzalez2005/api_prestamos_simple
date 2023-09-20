@@ -146,18 +146,46 @@ export class ReportesService {
      } catch (error) {
        console.log(error);  
      }
-   } 
-    
-   async getImprimirPrestamos(dto: CreateReporteDto): Promise<any | undefined> { 
-    console.log(dto);
-     try {
-       const reporte = await this.dataSource.query('call getImprimirPrestamos(?,?)', [
-         dto.empresa_id,dto.prestamos_id]);          
-       return reporte[0];
-     } catch (error) {
-       console.log(error);  
-     }
-   }   
+   }
+   
+   async getImprimirPrestamos(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getImprimirPrestamos(?,?)', [       
+        dto.empresa_id,
+        dto.prestamos_id,       
+      ]);
+        
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
+   async getPrestamosClientesPrestamosId(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getPrestamosClientesPrestamosId(?,?)', [       
+        dto.empresa_id,
+        dto.prestamos_id,       
+      ]);
+        console.log(prestamos[0]);
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getpagosImprimir(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getpagosImprimir(?,?)', [       
+        dto.empresa_id,
+        dto.pagos_id,       
+      ]);
+        console.log(prestamos[0]);
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
  
+
 }

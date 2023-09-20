@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100427
+ Source Server Version : 100425
  Source Host           : localhost:3306
  Source Schema         : db_prestamos_simple
 
  Target Server Type    : MySQL
- Target Server Version : 100427
+ Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 19/09/2023 18:24:50
+ Date: 20/09/2023 16:11:43
 */
 
 SET NAMES utf8mb4;
@@ -1594,7 +1594,7 @@ INSERT INTO `referencias` VALUES (1, 1, '012-2555525-5', 'REYNALDO FERNANDEZ', '
 INSERT INTO `referencias` VALUES (1, 1, '012-5554444-1', 'IVELISSE MEJIA', 'PASTOR BELLA VISTA', 'MASCULINO', '829-555-2555', 'MADRE', 0, 1);
 INSERT INTO `referencias` VALUES (5, 1, '002-1122555-4', 'ANDREA MEZON', 'CALLE 5, LOS CIRUELITOS', 'MASCULINO', '829-885-8888', 'AMIGA', 1, 1);
 INSERT INTO `referencias` VALUES (6, 1, '011-4444111-1', 'WILSON GONZALEZ', 'CALLE EUGENIO PERDOMO', 'MASCULINO', '829-585-8888', 'PRIMO', 1, 1);
-INSERT INTO `referencias` VALUES (7, 1, '001-2552222-1', 'WILSON GONZALEZ', 'SANTIAGO DE LOS CABALLEROS', 'MASCULINO', '809-315-1696', 'AMIGO', 1, 1);
+INSERT INTO `referencias` VALUES (7, 1, '001-2552222-1', 'WILSON GONZALEZ', 'SANTIAGO DE LOS CABALLEROS', 'MASCULINO', '809-315-1696', 'AMIGO', 0, 1);
 INSERT INTO `referencias` VALUES (8, 1, '001-0000011-2', 'PEDRO HERNANDEZ', 'CAMBOLLA', 'MASCULINO', '829-588-5888', 'AMIGO', 1, 1);
 
 -- ----------------------------
@@ -1893,6 +1893,8 @@ SELECT
 	a.empresa_id,
 	a.cedula,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	a.direccion,
 	a.negocio,
 	a.ubicacion,
@@ -2298,6 +2300,8 @@ BEGIN
 	b.cantidadplazos,
 	b.minteres,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	b.monto,
 	( b.monto - b.cappag ) AS capital,
 	( b.interes - b.intpag ) AS interes,
@@ -2416,6 +2420,8 @@ BEGIN
 	b.cantidadplazos,
 	b.minteres,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	b.monto,
 	( b.monto - b.cappag ) AS capital,
 	( b.interes - b.intpag ) AS interes,
@@ -2534,6 +2540,8 @@ BEGIN
 	b.cantidadplazos,
 	b.minteres,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	b.monto,
 	( b.monto - b.cappag ) AS capital,
 	( b.interes - b.intpag ) AS interes,
@@ -3071,10 +3079,11 @@ BEGIN
 			a.telefon2,
 			a.direccion,
 			a.sexo,
-			(SELECT cedula FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1) as cedulacoodeudor,
-			(SELECT nombres FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1) as coodeudor,
-			(SELECT direccion FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1) as direccioncoodeudor,
-			(SELECT sexo FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1) as sexocoodeudor,
+			IF(ISNULL((SELECT cedula FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)),"( NO CEDULA GARANTE )",(SELECT cedula FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)) as cedulacoodeudor,
+			
+			IF(ISNULL((SELECT nombres FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)),"( NO NOMBRE GARANTE )",(SELECT nombres FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)) as coodeudor,
+			IF(ISNULL((SELECT direccion FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)),"( NO DIRECCION GARANTE )",(SELECT direccion FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)) as direccioncoodeudor,
+			IF(ISNULL((SELECT sexo FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)),"( NO SEXO GARANTE )",(SELECT sexo FROM referencias WHERE clientes_id=a.id AND coodeudor=1 limit 1)) as sexocoodeudor,
 			b.monto,
 			b.cuota,
 			b.inicio,
@@ -3203,6 +3212,7 @@ BEGIN
 	SELECT
 	
 	    a.id,
+			b.id as prestamos,
 			c.nombre,
 			c.telefon1,
 			c.telefon2,
@@ -3211,7 +3221,78 @@ BEGIN
 			a.tinteres,
 			a.tseguro,
 			a.tmora,
-			e.nombre as cobrador
+			e.nombre as cobrador,
+				
+		(select (b.monto - b.cappag ) + ( b.interes - b.intpag ) + ( b.seguro - b.segpag ) + ( b.otros - b.otrpag ) + ( b.mora - b.morpag ) 
+	FROM prestamos WHERE id =a.prestamos_id AND empresa_id=a.empresa_id) AS balance,
+	(SELECT b.cappag + b.intpag + b.segpag + b.otrpag + b.morpag FROM  prestamos  WHERE id =a.prestamos_id AND empresa_id=a.empresa_id) AS pagado,
+  
+	IF
+	(
+		(
+		SELECT
+			sum( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) 
+		FROM
+			cuotas 
+		WHERE
+		STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) AND empresa_id = b.empresa_id AND prestamos_id = b.id ) > 0,
+		(
+		SELECT
+			sum( ( ( capital - pcapital ) + ( interes ) - pinteres ) + ( seguro - pseguro ) ) 
+		FROM
+			cuotas 
+		WHERE
+			STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) 
+			AND empresa_id = b.empresa_id 
+			AND prestamos_id = b.id 
+		),
+		0 
+	) AS atrasadas,
+	IF((SELECT
+		( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro )
+		FROM
+		cuotas 
+	WHERE
+		( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) > 0 
+		AND empresa_id = b.empresa_id 
+		AND prestamos_id = b.id 
+	ORDER BY
+		npago ASC 
+		LIMIT 1 
+	)>0,(SELECT
+		( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro )
+		FROM
+		cuotas 
+	WHERE
+		( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) > 0 
+		AND empresa_id = b.empresa_id 
+		AND prestamos_id = b.id 
+	ORDER BY
+		npago ASC 
+		LIMIT 1 ),0) AS siguiente,
+	b.cantidadplazos as cantidad,
+	(
+	SELECT
+		count( npago ) 
+	FROM
+		cuotas 
+	WHERE
+		( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) = 0 
+		AND empresa_id = b.empresa_id 
+		AND prestamos_id = b.id 
+	) AS pagadas,
+	(
+	SELECT
+		count( npago ) 
+	FROM
+		cuotas 
+	WHERE
+		( ( capital - pcapital ) + ( interes - pinteres ) + ( seguro - pseguro ) ) > 0 
+		AND STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) 
+		AND empresa_id = b.empresa_id 
+		AND prestamos_id = b.id 
+	) AS cuotaatrasadas
+  
 						
 			FROM 
 			
@@ -3221,14 +3302,6 @@ BEGIN
 							INNER JOIN usuario e ON(d.empresa_id=e.empresa_id AND d.usuario_id=e.id)
 							WHERE a.empresa_id=empresaId AND a.id = pagosId;
 							
-	
-	
-	
-	
-	
-	
-	
-
 END
 ;;
 delimiter ;
@@ -3265,6 +3338,8 @@ BEGIN
 	b.cantidadplazos,
 	b.minteres,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	b.monto,
 	( b.monto - b.cappag ) AS capital,
 	( b.interes - b.intpag ) AS interes,
@@ -3483,6 +3558,54 @@ END
 delimiter ;
 
 -- ----------------------------
+-- Procedure structure for getPrestamosClientesPrestamosId
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `getPrestamosClientesPrestamosId`;
+delimiter ;;
+CREATE PROCEDURE `getPrestamosClientesPrestamosId`(IN `empresaId` int(10),IN `prestamosId` int(20))
+BEGIN
+
+	
+	SELECT
+	   a.id,
+		 a.fecha,
+		 a.clientes_id,
+     b.nombre,
+		 b.telefon1,
+		 b.telefon2,
+		 c.descripcion,
+		 a.minteres,
+		 (a.monto+a.interes+a.seguro+a.otros+a.mora) as total,
+		 (a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag) as pagado,
+		 ((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag)) as balance,
+		 a.cuota,
+		 a.vence,
+		 (a.seguro-a.segpag) as seguro,
+		 a.fecultpag as ultimo,
+		 d.descripcion as plazo,
+		  (SELECT count(*) FROM cuotas WHERE empresa_id=a.empresa_id AND prestamos_id=a.id AND ((capital-pcapital)+(interes-pinteres)+(seguro-pseguro))=0) as pagadas,
+		 a.cantidadplazos as cantidad,
+		 e.nombres as ruta,
+		 h.nombre as usuario,		 
+		 IF(a.estado=1,"Activo","Cancelado") as estado,
+		
+		 IF((SELECT SUM((capital-pcapital)+(interes-pinteres)+(seguro-pseguro)) FROM cuotas WHERE empresa_id=a.empresa_id AND prestamos_id= a.id AND STR_TO_DATE(fecha, "%d/%m/%Y" )< DATE_FORMAT(now(), "%Y-%m-%d"))>0,(SELECT SUM((capital-pcapital)+(interes-pinteres)+seguro-pseguro) FROM cuotas WHERE empresa_id=a.empresa_id AND prestamos_id= a.id AND STR_TO_DATE(fecha, "%d/%m/%Y" )< DATE_FORMAT(now(), "%Y-%m-%d")),0) as atrasos,
+		 IF(((a.monto+a.interes+a.seguro+a.otros+a.mora)-(a.cappag+a.intpag+a.segpag+a.otrpag+a.morpag))>0,"BALANCE","SALDADO") as estatus
+		 	 
+		 FROM prestamos a INNER JOIN clientes b ON (a.empresa_id=b.empresa_id AND a.clientes_id = b.id)
+		                  INNER JOIN tipoprestamos c ON a.tipoprestamos_id = c.id
+											INNER JOIN plazos d ON a.plazo_id=d.id
+											INNER JOIN rutas e ON (a.empresa_id=e.empresa_id AND a.ruta_id = e.id)
+											INNER JOIN cobradores g ON(a.empresa_id=g.empresa_id AND a.cobrador_id=g.id)
+											INNER JOIN cobradores_rutas f ON (a.empresa_id=f.empresa_id AND f.rutas_id = e.id AND g.id = f.cobradores_id)	INNER JOIN usuario h ON(a.empresa_id = h.empresa_id AND g.usuario_id=h.id)
+											WHERE a.empresa_id=empresaId AND a.id=prestamosId order by a.id asc;
+											
+											
+END
+;;
+delimiter ;
+
+-- ----------------------------
 -- Procedure structure for getPrestamosId
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `getPrestamosId`;
@@ -3497,6 +3620,8 @@ SELECT
 	b.cantidadplazos,
 	b.minteres,
 	a.nombre,
+	a.telefon1,
+	a.telefon2,
 	b.monto,
 	( b.monto - b.cappag ) AS capital,
 	( b.interes - b.intpag ) AS interes,

@@ -73,5 +73,16 @@ export class ReportesController {
   async getImprimirPrestamos(@Body() dto: CreateReporteDto) {
     return this.reportesService.getImprimirPrestamos(dto[0]);
   }
+
+  @Post("getPrestamosClientesPrestamosId")
+  async getPrestamosClientesPrestamosId(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getPrestamosClientesPrestamosId(dto[0]);
+  }
+
+  @Post("getpagosImprimir")
+  async getpagosImprimir(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getpagosImprimir(dto[0]);
+  }
+  
   
 }
