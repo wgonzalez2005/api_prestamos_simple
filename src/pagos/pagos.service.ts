@@ -50,6 +50,19 @@ export class PagosService {
         }
       }
 
+
+      try {
+        const pagos = await this.dataSource.query(
+          'call getpagosImprimir(?,?)',
+          [
+            dto.empresa_id,
+            id],
+        );
+        return pagos[0];
+      } catch (error) {
+        console.log(error);
+      }
+
       return pagos[0];
       // return [];
     } catch (error) {
