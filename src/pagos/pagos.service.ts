@@ -10,9 +10,10 @@ export class PagosService {
   async InsertarPagos(dto: CreatePagoDto): Promise<any | undefined> {
     try {
       const pagos = await this.dataSource.query(
-        'call InsertarPagos(?,?,?,?,?,?,?,?,?,?)',
+        'call InsertarPagos(?,?,?,?,?,?,?,?,?,?,?)',
         [
           dto.empresa_id,
+          dto.fecha,
           dto.prestamos_id,
           dto.notransaccion,
           dto.detallepagos,

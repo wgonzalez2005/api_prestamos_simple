@@ -3,6 +3,7 @@ import { Double } from "typeorm";
 export class CreatePagoDto {
     empresa_id:number;
     prestamos_id:number;
+    fecha:string;
     notransaccion:number;
     detallepagos:string;
     tcapital:Double;

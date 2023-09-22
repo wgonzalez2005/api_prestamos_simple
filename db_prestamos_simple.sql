@@ -11,7 +11,7 @@
  Target Server Version : 100425
  File Encoding         : 65001
 
- Date: 21/09/2023 16:43:08
+ Date: 22/09/2023 17:02:34
 */
 
 SET NAMES utf8mb4;
@@ -496,14 +496,14 @@ INSERT INTO `cuotas` VALUES (19, 1, '26/10/2024', 15, 890.41, 45.36, 0.00, 890.4
 INSERT INTO `cuotas` VALUES (19, 1, '26/11/2024', 16, 901.54, 34.23, 0.00, 901.54, 34.23, 0.00);
 INSERT INTO `cuotas` VALUES (19, 1, '26/12/2024', 17, 912.81, 22.96, 0.00, 912.81, 22.96, 0.00);
 INSERT INTO `cuotas` VALUES (19, 1, '26/1/2025', 18, 924.22, 11.55, 0.00, 924.22, 11.55, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/8/2023', 1, 742.85, 200.00, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '20/9/2023', 2, 752.75, 190.10, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/10/2023', 3, 762.79, 180.06, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/11/2023', 4, 772.96, 169.89, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/12/2023', 5, 783.27, 159.58, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/1/2024', 6, 793.71, 149.14, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '27/2/2024', 7, 804.29, 138.56, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (20, 1, '26/3/2024', 8, 815.02, 127.83, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/8/2023', 1, 742.85, 200.00, 0.00, 742.85, 200.00, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '12/9/2023', 2, 752.75, 190.10, 0.00, 752.75, 190.10, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/10/2023', 3, 762.79, 180.06, 0.00, 762.79, 180.06, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/11/2023', 4, 772.96, 169.89, 0.00, 772.96, 169.89, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/12/2023', 5, 783.27, 159.58, 0.00, 783.27, 159.58, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/1/2024', 6, 793.71, 149.14, 0.00, 793.71, 149.14, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '27/2/2024', 7, 804.29, 138.56, 0.00, 804.29, 138.56, 0.00);
+INSERT INTO `cuotas` VALUES (20, 1, '26/3/2024', 8, 815.02, 127.83, 0.00, 716.14, 127.83, 0.00);
 INSERT INTO `cuotas` VALUES (20, 1, '26/4/2024', 9, 825.89, 116.96, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (20, 1, '26/5/2024', 10, 836.90, 105.95, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (20, 1, '26/6/2024', 11, 848.06, 94.79, 0.00, 0.00, 0.00, 0.00);
@@ -580,7 +580,7 @@ INSERT INTO `cuotas` VALUES (24, 1, '6/5/2025', 21, 2351.89, 144.32, 0.00, 0.00,
 INSERT INTO `cuotas` VALUES (24, 1, '6/6/2025', 22, 2387.17, 109.04, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (24, 1, '6/7/2025', 23, 2422.98, 73.23, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (24, 1, '6/8/2025', 24, 2459.32, 36.89, 0.00, 0.00, 0.00, 0.00);
-INSERT INTO `cuotas` VALUES (25, 1, '8/9/2023', 1, 1746.21, 750.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (25, 1, '8/9/2023', 1, 1746.21, 750.00, 0.00, 0.00, 618.64, 0.00);
 INSERT INTO `cuotas` VALUES (25, 1, '8/10/2023', 2, 1772.40, 723.81, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (25, 1, '8/11/2023', 3, 1798.99, 697.22, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (25, 1, '8/12/2023', 4, 1825.97, 670.24, 0.00, 0.00, 0.00, 0.00);
@@ -628,7 +628,7 @@ INSERT INTO `cuotas` VALUES (26, 1, '7/5/2025', 21, 705.56, 43.30, 0.00, 705.56,
 INSERT INTO `cuotas` VALUES (26, 1, '7/6/2025', 22, 716.15, 32.71, 0.00, 716.15, 32.71, 0.00);
 INSERT INTO `cuotas` VALUES (26, 1, '7/7/2025', 23, 726.89, 21.97, 0.00, 726.89, 21.97, 0.00);
 INSERT INTO `cuotas` VALUES (26, 1, '7/8/2025', 24, 737.79, 11.07, 0.00, 737.79, 11.07, 0.00);
-INSERT INTO `cuotas` VALUES (27, 1, '9/9/2023', 1, 2961.57, 833.33, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `cuotas` VALUES (27, 1, '9/9/2023', 1, 2961.57, 833.33, 0.00, 963.64, 833.33, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '9/10/2023', 2, 3010.93, 783.97, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '9/11/2023', 3, 3061.11, 733.79, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `cuotas` VALUES (27, 1, '9/12/2023', 4, 3112.13, 682.77, 0.00, 0.00, 0.00, 0.00);
@@ -1333,6 +1333,16 @@ INSERT INTO `detalle_pagos` VALUES (58, 1, 4, 'Abono Cuota:#4', 0.00, 884.02, 0.
 INSERT INTO `detalle_pagos` VALUES (59, 1, 1, 'Saldo Cuota:#1', 2233.50, 1250.00, 0.00, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `detalle_pagos` VALUES (59, 1, 2, 'Saldo Cuota:#2', 2289.34, 1194.16, 0.00, 0.00, 0.00, 0.00, 0.00);
 INSERT INTO `detalle_pagos` VALUES (59, 1, 3, 'Abono Cuota:#3', 0.00, 133.00, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (60, 1, 1, 'Abono Cuota:#1', 0.00, 618.64, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 1, 'Saldo Cuota:#1', 742.85, 200.00, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 2, 'Saldo Cuota:#2', 752.75, 190.10, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 3, 'Saldo Cuota:#3', 762.79, 180.06, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 4, 'Saldo Cuota:#4', 772.96, 169.89, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 5, 'Saldo Cuota:#5', 783.27, 159.58, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 6, 'Saldo Cuota:#6', 793.71, 149.14, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 7, 'Saldo Cuota:#7', 804.29, 138.56, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (61, 1, 8, 'Abono Cuota:#8', 716.14, 127.83, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `detalle_pagos` VALUES (64, 1, 1, 'Abono Cuota:#1', 963.64, 833.33, 0.00, 0.00, 0.00, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for empresa
@@ -1377,7 +1387,14 @@ CREATE TABLE `moras`  (
   INDEX `empresa_id`(`empresa_id`) USING BTREE,
   CONSTRAINT `fk_atrasos_atrasos_122` FOREIGN KEY (`empresa_id`) REFERENCES `empresa` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_atrasos_atrasos_222` FOREIGN KEY (`prestamos_id`) REFERENCES `prestamos` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of moras
+-- ----------------------------
+INSERT INTO `moras` VALUES (1, 1, '22/09/2023', 20, 1686.08, 1686.08);
+INSERT INTO `moras` VALUES (2, 1, '22/09/2023', 25, 1481.36, 1481.36);
+INSERT INTO `moras` VALUES (3, 1, '22/09/2023', 27, 2303.03, 4606.06);
 
 -- ----------------------------
 -- Table structure for pagos
@@ -1409,7 +1426,7 @@ CREATE TABLE `pagos`  (
   INDEX `usuario_id`(`usuario_id`) USING BTREE,
   CONSTRAINT `fk_pagos_pagos_1` FOREIGN KEY (`empresa_id`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_pagos_pagos_2` FOREIGN KEY (`cobrador_id`) REFERENCES `cobradores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pagos
@@ -1463,6 +1480,11 @@ INSERT INTO `pagos` VALUES (56, 1, 23, '0', '13/09/2023', 'Saldo Seguro:870.00,S
 INSERT INTO `pagos` VALUES (57, 1, 24, '0', '19/09/2023', 'Saldo Seguro:2,900.00,Saldo Cuota:#1,Saldo Cuota:#2,Abono Cuota:#3', 3518.61, 1581.39, 2900.00, 0.00, 0.00, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
 INSERT INTO `pagos` VALUES (58, 1, 29, '0', '21/09/2023', 'Saldo Seguro:2,900.00,Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Abono Cuota:#4', 6425.48, 5674.52, 2900.00, 0.00, 0.00, 0.00, 0.00, 12, 1, NULL, NULL, NULL);
 INSERT INTO `pagos` VALUES (59, 1, 28, '0', '21/09/2023', 'Saldo Seguro:2,900.00,Saldo Cuota:#1,Saldo Cuota:#2,Abono Cuota:#3', 4522.84, 2577.16, 2900.00, 0.00, 0.00, 0.00, 0.00, 12, 1, NULL, NULL, NULL);
+INSERT INTO `pagos` VALUES (60, 1, 25, '0', '22/09/2023', 'Saldo Mora:1,481.36,Saldo Seguro:2,900.00,Abono Cuota:#1', 0.00, 618.64, 2900.00, 0.00, 1481.36, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
+INSERT INTO `pagos` VALUES (61, 1, 20, '0', '22/09/2023', 'Saldo Mora:1,686.08,Saldo Seguro:870.00,Saldo Cuota:#1,Saldo Cuota:#2,Saldo Cuota:#3,Saldo Cuota:#4,Saldo Cuota:#5,Saldo Cuota:#6,Saldo Cuota:#7,Abono Cuota:#8', 6128.76, 1315.16, 870.00, 0.00, 1686.08, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
+INSERT INTO `pagos` VALUES (62, 1, 27, '0', '22/9/2023', 'Abono Mora:2,000.00', 0.00, 0.00, 0.00, 0.00, 2000.00, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
+INSERT INTO `pagos` VALUES (63, 1, 27, '0', '21/9/2023', 'Saldo Mora:303.03,Abono Seguro:2,196.97', 0.00, 0.00, 2196.97, 0.00, 303.03, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
+INSERT INTO `pagos` VALUES (64, 1, 27, '0', '21/9/2023', 'Saldo Seguro:703.03,Abono Cuota:#1', 963.64, 833.33, 703.03, 0.00, 0.00, 0.00, 0.00, 13, 1, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for plazos
@@ -1555,14 +1577,14 @@ INSERT INTO `prestamos` VALUES (16, '27/08/2023', 8, 1, 1, 15.00, 35000.00, 4302
 INSERT INTO `prestamos` VALUES (17, '26/10/2024', 5, 1, 1, 16.00, 45000.00, 4948.25, 3329.88, '27/08/2023', '26/10/2024', 0.00, 2610.00, 0.00, '04/08/2023', 5, 15, 45000.00, 4948.25, 0.00, 0.00, 2610.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (18, '27/8/2023', 1, 1, 1, 12.00, 150000.00, 19464.49, 7061.02, '27/8/2023', '26/7/2025', 0.00, 8700.00, 0.00, '04/08/2023', 5, 24, 150000.00, 19464.49, 0.00, 0.00, 8700.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (19, '27/8/2023', 1, 1, 1, 15.00, 15000.00, 1843.92, 935.77, '27/8/2023', '26/1/2025', 0.00, 870.00, 0.00, '08/09/2023', 5, 18, 15000.00, 1843.92, 0.00, 0.00, 870.00, 1, 13, 1);
-INSERT INTO `prestamos` VALUES (20, '04/08/2023', 6, 1, 1, 16.00, 15000.00, 1971.23, 942.85, '27/8/2023', '26/1/2025', 0.00, 870.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
+INSERT INTO `prestamos` VALUES (20, '04/08/2023', 6, 1, 1, 16.00, 15000.00, 1971.23, 942.85, '27/8/2023', '26/1/2025', 1686.08, 870.00, 0.00, '22/09/2023', 5, 18, 6128.76, 1315.16, 1686.08, 0.00, 870.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (21, '4/1/2023', 5, 1, 1, 12.00, 15000.00, 992.79, 1332.73, '3/8/2023', '2/7/2024', 0.00, 0.00, 0.00, '08/08/2023', 5, 12, 15000.00, 992.79, 0.00, 0.00, 0.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (22, '4/1/2023', 6, 1, 2, 15.00, 15000.00, 2250.00, 187.50, '3/8/2023', '2/7/2024', 0.00, 870.00, 0.00, '04/08/2023', 5, 12, 15000.00, 2250.00, 0.00, 0.00, 870.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (23, '7/3/2023', 6, 1, 1, 30.00, 15000.00, 3810.95, 1045.05, '7/9/2023', '6/2/2025', 0.00, 870.00, 0.00, '13/09/2023', 5, 18, 6686.32, 2943.68, 0.00, 0.00, 870.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (24, '7/3/2023', 1, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '7/9/2023', '6/8/2025', 0.00, 2900.00, 0.00, '19/09/2023', 5, 24, 3518.61, 1581.39, 0.00, 0.00, 2900.00, 1, 13, 1);
-INSERT INTO `prestamos` VALUES (25, '8/9/2023', 6, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '8/9/2023', '7/8/2025', 0.00, 2900.00, 0.00, '', 5, 24, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
+INSERT INTO `prestamos` VALUES (25, '8/9/2023', 6, 1, 1, 18.00, 50000.00, 9908.92, 2496.21, '8/9/2023', '7/8/2025', 1481.36, 2900.00, 0.00, '22/09/2023', 5, 24, 0.00, 618.64, 1481.36, 0.00, 2900.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (26, '8/12/2023', 7, 1, 1, 18.00, 15000.00, 2972.68, 748.86, '8/9/2023', '7/8/2025', 0.00, 0.00, 0.00, '08/08/2023', 5, 24, 15000.00, 2972.68, 0.00, 0.00, 0.00, 3, 12, 1);
-INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.50, 3794.90, '9/9/2023', '8/11/2024', 0.00, 2900.00, 0.00, '07/09/2023', 5, 15, 0.00, 0.00, 0.00, 0.00, 0.00, 1, 13, 1);
+INSERT INTO `prestamos` VALUES (27, '9/8/2023', 5, 1, 1, 20.00, 50000.00, 6923.50, 3794.90, '9/9/2023', '8/11/2024', 2303.03, 2900.00, 0.00, '22/09/2023', 5, 15, 963.64, 833.33, 2303.03, 0.00, 2900.00, 1, 13, 1);
 INSERT INTO `prestamos` VALUES (28, '28/3/2023', 7, 1, 1, 30.00, 50000.00, 12703.08, 3483.50, '28/9/2023', '27/2/2025', 0.00, 2900.00, 0.00, '21/09/2023', 5, 18, 4522.84, 2577.16, 0.00, 0.00, 2900.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (29, '11/3/2023', 7, 1, 1, 40.00, 50000.00, 17295.80, 3738.66, '11/10/2023', '10/3/2025', 0.00, 2900.00, 0.00, '21/09/2023', 5, 18, 6425.48, 5674.52, 0.00, 0.00, 2900.00, 3, 12, 1);
 INSERT INTO `prestamos` VALUES (30, '11/09/2023', 5, 1, 1, 40.00, 25000.00, 8647.91, 1869.33, '11/10/2023', '10/3/2025', 0.00, 1450.00, 0.00, '', 5, 18, 0.00, 0.00, 0.00, 0.00, 0.00, 3, 12, 1);
@@ -1755,6 +1777,59 @@ BEGIN
 			   pseguro = pseguro - tsegu
 			WHERE empresa_id=	 empresaId AND prestamos_id = prestamosId AND npago = npag;
 			
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for ActualizarMora
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `ActualizarMora`;
+delimiter ;;
+CREATE PROCEDURE `ActualizarMora`(IN `empresaId` int(10),IN `prestamosId` int(20),IN `mora` double(15,2))
+BEGIN
+SET @vmora=mora;	
+FOR var_mora IN (SELECT
+id,
+empresa_id,
+prestamos_id,
+monto,
+pagado 
+FROM
+	moras 
+WHERE
+	prestamos_id = prestamosId 
+	AND empresa_id = empresaId 
+	) DO
+	 IF var_mora.pagado > 0 AND var_mora.monto>var_mora.pagado then 
+	 
+	  IF  (var_mora.monto-var_mora.pagado) > @vmora THEN 
+		
+    UPDATE moras SET pagado = pagado + @vmora WHERE moras.empresa_id=empresaId AND moras.prestamos_id=prestamosId;
+		SET @vmora:= 0;
+    
+		ELSE
+		
+		 UPDATE moras SET pagado = pagado+var_mora.monto WHERE moras.empresa_id=empresaId AND moras.prestamos_id=prestamosId;
+			SET @vmora = @vmora - var_mora.monto;
+		END IF;
+		
+	 
+	 ELSE
+	 
+	 IF  (var_mora.monto-var_mora.pagado) > @vmora THEN 
+		
+    UPDATE moras SET pagado = pagado+@vmora WHERE moras.empresa_id=empresaId AND moras.prestamos_id=prestamosId;
+			SET @vmora = 0;
+		ELSE
+		 UPDATE moras SET pagado = pagado+var_mora.monto WHERE moras.empresa_id=empresaId AND moras.prestamos_id=prestamosId;
+		 	SET @vmora = @vmora -var_mora.monto;
+		END IF;
+	 
+	 END IF;
+
+  end for;
+     
 END
 ;;
 delimiter ;
@@ -2071,6 +2146,42 @@ END
 delimiter ;
 
 -- ----------------------------
+-- Procedure structure for calculoMora
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `calculoMora`;
+delimiter ;;
+CREATE PROCEDURE `calculoMora`(IN `empresaId` int(10))
+BEGIN
+
+SET @dias = 0;
+SET @mora = 0;
+SELECT @dias:=valor FROM configuracion WHERE id = 3 AND empresa_id=1;
+SELECT @mora:=valor FROM configuracion WHERE id = 1 AND empresa_id=1;
+
+Update prestamos a SET a.mora = a.mora + IF(a.mora<(SELECT
+			sum(IF((DATEDIFF(DATE_FORMAT( now( ), "%Y-%m-%d" ),STR_TO_DATE( fecha, "%d/%m/%Y" ))-@dias)>0,TRUNCATE((( capital - pcapital )*@mora/360)*(DATEDIFF(DATE_FORMAT( now( ), "%Y-%m-%d" ),STR_TO_DATE( fecha, "%d/%m/%Y" ))-@dias),2),0)) as mora		
+		FROM
+					
+			cuotas 
+			
+		WHERE
+			STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) 
+			AND empresa_id = empresaId AND ( capital - pcapital ) > 0 AND prestamos_id=a.id GROUP BY prestamos_id),(SELECT
+			sum(IF((DATEDIFF(DATE_FORMAT( now( ), "%Y-%m-%d" ),STR_TO_DATE( fecha, "%d/%m/%Y" ))-@dias)>0,TRUNCATE((( capital - pcapital )*@mora/360)*(DATEDIFF(DATE_FORMAT( now( ), "%Y-%m-%d" ),STR_TO_DATE( fecha, "%d/%m/%Y" ))-@dias),2),0)) as mora		
+		FROM
+					
+			cuotas 
+			
+		WHERE
+			STR_TO_DATE( fecha, "%d/%m/%Y" ) < DATE_FORMAT( now( ), "%Y-%m-%d" ) 
+			AND empresa_id = empresaId AND ( capital - pcapital ) > 0 AND prestamos_id=a.id GROUP BY prestamos_id)-a.mora,0);
+			
+			
+END
+;;
+delimiter ;
+
+-- ----------------------------
 -- Procedure structure for cambiarContrasena
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `cambiarContrasena`;
@@ -2317,7 +2428,7 @@ BEGIN
 	b.cuota,
 	b.inicio,
 	b.vence,
-	b.mora,
+	(b.mora-b.morpag) as mora,
 	( b.seguro - b.segpag ) AS seguro,
 	( b.otros - b.otrpag ) AS otros,
 	b.fecultpag,
@@ -2437,7 +2548,7 @@ BEGIN
 	b.cuota,
 	b.inicio,
 	b.vence,
-	b.mora,
+	(b.mora-b.morpag) as mora,
 	( b.seguro - b.segpag ) AS seguro,
 	( b.otros - b.otrpag ) AS otros,
 	b.fecultpag,
@@ -2557,7 +2668,7 @@ BEGIN
 	b.cuota,
 	b.inicio,
 	b.vence,
-	b.mora,
+	(b.mora-b.morpag) as mora,
 	( b.seguro - b.segpag ) AS seguro,
 	( b.otros - b.otrpag ) AS otros,
 	b.fecultpag,
@@ -2774,7 +2885,7 @@ DROP PROCEDURE IF EXISTS `getConfiguracionAll`;
 delimiter ;;
 CREATE PROCEDURE `getConfiguracionAll`(IN `empresaId` int(10))
 BEGIN
-		
+
 SELECT
 	id,
 	empresa_id,
@@ -2797,7 +2908,7 @@ DROP PROCEDURE IF EXISTS `getConfiguracionAllActiva`;
 delimiter ;;
 CREATE PROCEDURE `getConfiguracionAllActiva`(IN `empresaId` int(10))
 BEGIN
-		
+call calculoMora(empresaId);				
 SELECT
 	id,
 	descripcion AS nombre,
@@ -3355,7 +3466,7 @@ BEGIN
 	b.cuota,
 	b.inicio,
 	b.vence,
-	b.mora,
+	(b.mora-b.morpag) as mora,
 	( b.seguro - b.segpag ) AS seguro,
 	( b.otros - b.otrpag ) AS otros,
 	b.fecultpag,
@@ -5150,7 +5261,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `InsertarPagos`;
 delimiter ;;
-CREATE PROCEDURE `InsertarPagos`(IN `empresaId` int(10),IN `prestamosId` int(20),IN `notransa` varchar(100),IN `detaPagos` text,IN `tcap` double(15,2),IN `tint` double(15,2),IN `tsegu` double(15,2),IN `totr` double(15,2),IN `tmor` double(15,2),IN `cobradorId` int(10))
+CREATE PROCEDURE `InsertarPagos`(IN `empresaId` int(10),IN fecha VARCHAR(20), IN `prestamosId` int(20),IN `notransa` varchar(100),IN `detaPagos` text,IN `tcap` double(15,2),IN `tint` double(15,2),IN `tsegu` double(15,2),IN `totr` double(15,2),IN `tmor` double(15,2),IN `cobradorId` int(10))
 BEGIN
 
 INSERT INTO pagos ( empresa_id, prestamos_id, notransaccion, fecha, detalle_pago, tcapital, tinteres, tseguro, totros, tmora, balance, atrasos, cobrador_id )
@@ -5159,7 +5270,7 @@ VALUES
 		empresaId,
 		prestamosId,
 		notransa,
-		DATE_FORMAT( now( ), "%d/%m/%Y" ),
+		fecha,
 		detaPagos,
 		tcap,
 		tint,
@@ -5171,7 +5282,7 @@ VALUES
 	cobradorId);
 	
 	call ActualizarPrestamos(empresaId,prestamosId,tcap,tint,tmor,totr,tsegu);
-	
+	call ActualizarMora(empresaId,prestamosId,tmor);
 	SELECT @@identity AS id;	
 		
 END
@@ -5526,6 +5637,19 @@ WHERE
 	
 
 END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table prestamos
+-- ----------------------------
+DROP TRIGGER IF EXISTS `mora`;
+delimiter ;;
+CREATE TRIGGER `mora` AFTER UPDATE ON `prestamos` FOR EACH ROW IF (NEW.mora-OLD.mora) >0 THEN 
+
+insert into moras(empresa_id,fecha,prestamos_id,monto,pagado)VALUES(NEW.empresa_id,DATE_FORMAT(now(),"%d/%m/%Y"),NEW.id,(NEW.mora-OLD.mora),0);
+
+END IF
 ;;
 delimiter ;
 
