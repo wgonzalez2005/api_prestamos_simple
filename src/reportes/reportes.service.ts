@@ -66,7 +66,7 @@ export class ReportesService {
     try {
       const reporte = await this.dataSource.query('call getReportePrestamosAll(?,?,?,?)', [
         dto.empresa_id,dto.inicio,dto.fin,dto.op]); 
-        console.log(reporte[0]);   
+         
       return reporte[0];
     } catch (error) {
       console.log(error);  
@@ -78,7 +78,7 @@ export class ReportesService {
     try {
       const reporte = await this.dataSource.query('call getReportePrestamosClientesAll(?,?)', [
         dto.empresa_id,dto.op]); 
-        console.log(reporte[0]);
+       
       return reporte[0];
     } catch (error) {
       console.log(error);  
@@ -90,7 +90,7 @@ export class ReportesService {
     try {
       const reporte = await this.dataSource.query('call getReportePrestamoClientesId(?,?,?)', [
         dto.empresa_id,dto.clientes_id,dto.op]); 
-        console.log(reporte[0]);
+       
       return reporte[0];
     } catch (error) {
       console.log(error);  
@@ -102,7 +102,7 @@ export class ReportesService {
      try {
        const reporte = await this.dataSource.query('call getReportePagosPrestamosId(?,?)', [
          dto.empresa_id,dto.prestamos_id]); 
-         console.log(reporte[0]);
+         
        return reporte[0];
      } catch (error) {
        console.log(error);  
@@ -115,7 +115,7 @@ export class ReportesService {
      try {
        const reporte = await this.dataSource.query('call getReportePrestamosAlDia(?,?,?)', [
          dto.empresa_id,dto.inicio,dto.fin]); 
-         console.log(reporte[0]);
+       
        return reporte[0];
      } catch (error) {
        console.log(error);  
@@ -128,7 +128,7 @@ export class ReportesService {
      try {
        const reporte = await this.dataSource.query('call getReportePagosFecha(?,?,?)', [
          dto.empresa_id,dto.inicio,dto.fin]); 
-         console.log(reporte[0]);
+        
        return reporte[0];
      } catch (error) {
        console.log(error);  
@@ -141,7 +141,7 @@ export class ReportesService {
      try {
        const reporte = await this.dataSource.query('call getReportePrestamosAtrasos(?)', [
          dto.empresa_id]); 
-         console.log(reporte[0]);
+         
        return reporte[0];
      } catch (error) {
        console.log(error);  
@@ -167,7 +167,7 @@ export class ReportesService {
         dto.empresa_id,
         dto.prestamos_id,       
       ]);
-        console.log(prestamos[0]);
+        
       return prestamos[0];
     } catch (error) {
       console.log(error);
@@ -180,7 +180,57 @@ export class ReportesService {
         dto.empresa_id,
         dto.pagos_id,       
       ]);
-        console.log(prestamos[0]);
+        
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  async CalcularMora(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call calculoMora(?)', [       
+        dto.empresa_id     
+      ]);
+        
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  async getResumen(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getResumen(?)', [       
+        dto.empresa_id     
+      ]);
+      
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getGrafico1(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getGrafico1(?)', [       
+        dto.empresa_id     
+      ]);
+        
+      return prestamos[0];
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getGrafico2(dto: CreateReporteDto): Promise<any | undefined> {
+    try {
+      const prestamos = await this.dataSource.query('call getGrafico2(?)', [       
+        dto.empresa_id     
+      ]);
+       
       return prestamos[0];
     } catch (error) {
       console.log(error);

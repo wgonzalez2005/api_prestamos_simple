@@ -84,5 +84,23 @@ export class ReportesController {
     return this.reportesService.getpagosImprimir(dto[0]);
   }
   
-  
+  @Post("CalcularMora")
+  async CalcularMora(@Body() dto: CreateReporteDto) {
+    return this.reportesService.CalcularMora(dto[0]);
+  }
+
+  @Post("getResumen")
+  async getResumen(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getResumen(dto[0]);
+  }
+
+  @Post("getGrafico1")
+  async getGrafico1(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getGrafico1(dto[0]);
+  }
+
+  @Post("getGrafico2")
+  async getGrafico2(@Body() dto: CreateReporteDto) {
+    return this.reportesService.getGrafico2(dto[0]);
+  }
 }

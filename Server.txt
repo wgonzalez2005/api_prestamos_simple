@@ -1,6 +1,0 @@
-ssh diapason@luna.gbcsoft.com
-$Itn_server=2899
-
-
-
-jtme3291_prueba_sisistema

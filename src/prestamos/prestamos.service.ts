@@ -71,6 +71,7 @@ export class PrestamosService {
       const prestamos = await this.dataSource.query('call getConfiguracionAllActiva(?)', [
         dto.empresa_id,
       ]);
+      console.log(prestamos[0]);
       return prestamos[0];
     } catch (error) {
       console.log(error);
